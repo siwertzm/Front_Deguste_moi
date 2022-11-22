@@ -1,11 +1,10 @@
 img {
     height: 120px;
-    width: auto;
-    
+    width: auto;   
     padding: 2px 6px;
    
 }
 
-.nav-item white-text{
-    margin-top: 0px;
+.nav{
+    background-color: rgb(122,28,16);
 }
