@@ -1,0 +1,103 @@
+<div>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand"><img class="logo" src="https://i.ibb.co/D8LG9XF/logo.jpg" alt="Pizzeria-Logo"></a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item font-size">
+                    <a class="nav-link">Recettes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Vins</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Organiser un repas</a>
+                </li>
+
+            </ul>
+            <!-- Links -->
+
+            <form class="form-inline my-2 my-lg-0 ml-auto">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+            </form>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu dropdown-primary " aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Mon profil</a>
+                    <a class="dropdown-item" href="#">Mes amis</a>
+                    <a class="dropdown-item" href="#">Recttes favoris</a>
+                    <a class="dropdown-item" href="#">Vins favoris</a>
+                    <a class="dropdown-item" href="#">Liste de course</a>
+                    <a class="dropdown-item" href="#">Mes invitations</a>
+                    <a class="dropdown-item" href="#">Mes événements</a>
+                    <a class="dropdown-item" href="#">Calendrier</a>
+                </div>
+            </li>
+
+        </div>
+        <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+
+    <!-- Card Recette du Jour -->
+    <div class="card mb-4 width: 20%">
+        <h2 class="card-title text-center mt-3"><strong>RECETTES</strong></h2>
+
+        <!--Card image-->
+        <div class="view overlay">
+            <img class="card-img-top"
+                src="https://www.hachette-vins.com/uploads/media/cache/thumb_medium/uploads/media/recettes/0001/05/fbd4f25a25ff68f96a722a037e829c94b4db046f.jpeg"
+                alt="Card image cap">
+            <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+            </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+
+            <!--Title-->
+            <h3 class="card-title text-center">Aiguillettes de canard aux mirabelles</h3>
+            <br>
+            <h6 class="card-title">Nombre de personne : </h6>
+            <!--Text-->
+            <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
+            <p class="card-text">Gibier à plumes, à Cuisson assez courte associée à l'onctuosité du foie gras, la crème
+                et
+                le Porto. Grâce au vinaigre, le plat s'équilibre avec caractère. Choisir un vin corsé avec la couleur
+                correspondante au choix et type de Porto. L'accord Porto (par exemple un Tawny 20 ans d'âge) est la
+                solution
+                de facilité.</p>
+            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+            <h6 class="card-title">Temps de Prépararion : </h6>
+            <h6 class="card-title">Temps de cuisson : </h6>
+            <h6 class="card-title">Difficulté : </h6>
+            <div class="text-center">
+                <button type="button" class="btn btn-light-blue btn-md">VOIR LA RECETTE</button>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Card Recette du jour -->
+
+</div>
+
+<router-outlet></router-outlet>
