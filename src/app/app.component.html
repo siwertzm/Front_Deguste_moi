@@ -1,33 +1,67 @@
 <div>
-  <nav class="nav lighten-3 py-1 mb-5 font-weight-bold z-depth-2 w-100 nav-fill ">
-    <li class="nav-item">
-      <a ><img class="logo" src="https://i.ibb.co/WF3zQ1W/Pizzeria-Logo.jpg" alt="Pizzeria-Logo"></a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-link white-text py-5 " >Recettes</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link white-text py-5">Vins</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link white-text py-5">Organiser un repas</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link white-text py-5">Recherche</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link white-text py-5"><i class="fas fa-power-off"></i></a>
-    </li>
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand"><img class="logo" src="https://i.ibb.co/D8LG9XF/logo.jpg" alt="Pizzeria-Logo"></a>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item font-size">
+          <a class="nav-link">Recettes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Vins</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Organiser un repas</a>
+        </li>
+
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Mon profil</a>
+            <a class="dropdown-item" href="#">Mes amis</a>
+            <a class="dropdown-item" href="#">Recttes favoris</a>
+            <a class="dropdown-item" href="#">Vins favoris</a>
+            <a class="dropdown-item" href="#">Liste de course</a>
+            <a class="dropdown-item" href="#">Mes invitations</a>
+            <a class="dropdown-item" href="#">Mes événements</a>
+            <a class="dropdown-item" href="#">Calendrier</a>
+          </div>
+        </li>
+
+      </ul>
+      <!-- Links -->
+
+      <form class="form-inline my-2 my-lg-0 ml-auto">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+      </form>
+    </div>
+    <!-- Collapsible content -->
+
   </nav>
+  <!--/.Navbar-->
 </div>
 
 <div>
-  <div>
+  <div style="margin: auto; width: 70%">
     <!-- Card deck -->
     <div class="card-deck mt-3 ml-5 mr-5">
 
-      <!-- Card -->
+      <!-- Card Recette du Jour -->
       <div class="card mb-4 width: 20%">
         <h2 class="card-title text-center mt-3"><strong>RECETTE DU JOUR</strong></h2>
 
@@ -65,9 +99,9 @@
         </div>
 
       </div>
-      <!-- Card -->
+      <!-- Card Recette du jour -->
 
-      <!-- Card -->
+      <!-- Card vin du jour -->
       <div class="card mb-4 width: 20%">
 
         <!--Card image-->
@@ -96,7 +130,7 @@
         </div>
 
       </div>
-      <!-- Card -->
+      <!-- Card vin du jour -->
 
     </div>
     <!-- Card deck -->

@@ -1,10 +1,10 @@
 .logo {
-    height: 120px;
+    height: 100px;
     width: auto;   
     padding: 2px 6px;
    
 }
 
-.nav{
+.navbar{
     background-color: rgb(122,28,16);
 }
