@@ -9,6 +9,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { FicheVinComponent } from './fiche-vin/fiche-vin.component';
 import { ListeVinComponent } from './liste-vin/liste-vin.component';
+import { FicheRecetteComponent } from './fiche-recette/fiche-recette.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ListeVinComponent } from './liste-vin/liste-vin.component';
     ConnexionComponent,
     InscriptionComponent,
     FicheVinComponent,
-    ListeVinComponent
+    ListeVinComponent,
+    FicheRecetteComponent
   ],
   imports: [
     BrowserModule,
