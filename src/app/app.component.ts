@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Deguste_moi';
-  isHome = true;
+  isConnected = true;
+  isHome = false;
 }

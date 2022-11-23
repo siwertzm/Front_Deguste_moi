@@ -7,12 +7,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { FicheVinComponent } from './fiche-vin/fiche-vin.component';
+import { ListeVinComponent } from './liste-vin/liste-vin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConnexionComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    FicheVinComponent,
+    ListeVinComponent
   ],
   imports: [
     BrowserModule,
