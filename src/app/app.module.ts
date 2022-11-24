@@ -20,6 +20,8 @@ import { MesVinsComponent } from './mes-vins/mes-vins.component';
 import { CalendrierComponent } from './calendrier/calendrier.component';
 import { MesInvitationsComponent } from './mes-invitations/mes-invitations.component';
 import { MesEvenementsComponent } from './mes-evenements/mes-evenements.component';
+import { RecettesFavsComponent } from './recettes-favs/recettes-favs.component';
+import { VinsFavsComponent } from './vins-favs/vins-favs.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { MesEvenementsComponent } from './mes-evenements/mes-evenements.componen
     MesVinsComponent,
     CalendrierComponent,
     MesInvitationsComponent,
-    MesEvenementsComponent
+    MesEvenementsComponent,
+    RecettesFavsComponent,
+    VinsFavsComponent
   ],
   imports: [
     BrowserModule,
