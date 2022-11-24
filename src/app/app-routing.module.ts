@@ -33,7 +33,7 @@ const routes: Routes = [
   {component : MesVinsComponent, path: "mesvins"},
   {component : CalendrierComponent, path : "calendrier"},
   {component : MesInvitationsComponent, path :"mesInvits"},
-  {component : ProfileComponent, path :"profil"}
+  {component : ProfileComponent, path :"profil"},
   {component : MesEvenementsComponent, path : "mesEvenements"},
   {component :VinsFavsComponent, path :"vinsFavs"},
   {component : RecettesFavsComponent, path:"recettesFavs"}
