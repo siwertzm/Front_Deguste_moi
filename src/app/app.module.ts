@@ -18,6 +18,7 @@ import { DialogueComponent } from './dialogue/dialogue.component';
 import { RecettesComponent } from './recettes/recettes.component';
 import { MesVinsComponent } from './mes-vins/mes-vins.component';
 import { CalendrierComponent } from './calendrier/calendrier.component';
+import { MesInvitationsComponent } from './mes-invitations/mes-invitations.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CalendrierComponent } from './calendrier/calendrier.component';
     DialogueComponent,
     RecettesComponent,
     MesVinsComponent,
-    CalendrierComponent
+    CalendrierComponent,
+    MesInvitationsComponent
   ],
   imports: [
     BrowserModule,
