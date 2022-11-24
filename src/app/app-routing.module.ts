@@ -6,7 +6,9 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ListeVinComponent } from './liste-vin/liste-vin.component';
 import { RecettesComponent } from './recettes/recettes.component';
 import { FicheRecetteComponent } from './fiche-recette/fiche-recette.component';
-import { AmisComponent } from './amis/amis.component';
+import { OrgaRepasComponent } from './orga-repas/orga-repas.component';
+import {AmisComponent } from './amis/amis.component';
+
 
 
 const routes: Routes = [
@@ -17,6 +19,7 @@ const routes: Routes = [
   {component: RecettesComponent, path: "recettes"},
   {component: FicheRecetteComponent, path: "ficheRecette"},
   {component: AmisComponent, path: "amis"}
+  {component: OrgaRepasComponent, path: "OrgaRepas"},
 
 
 ];
