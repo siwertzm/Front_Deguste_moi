@@ -39,4 +39,11 @@ export class RecettesComponent {
 
     });
   }
+
+  rechercheRecette(val: string) {
+    this.http.get('http://localhost:8289/recette/titre/' + val).subscribe({
+      next: (data)=> { this.recette = data; console.log(data)},
+      error: (err) => { console.log(err);}
+    });
+  }
 }
