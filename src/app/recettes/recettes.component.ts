@@ -2,12 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-recette',
-  templateUrl: './recette.component.html',
-  styleUrls: ['./recette.component.css']
+  selector: 'app-recettes',
+  templateUrl: './recettes.component.html',
+  styleUrls: ['./recettes.component.css']
 })
-export class RecetteComponent {
-
+export class RecettesComponent {
+  
   recette: any;
   constructor(private http: HttpClient) {
 
