@@ -12,6 +12,7 @@ import { ListeVinComponent } from './liste-vin/liste-vin.component';
 import { FicheRecetteComponent } from './fiche-recette/fiche-recette.component';
 import { AmisComponent } from './amis/amis.component';
 import { OrgaRepasComponent } from './orga-repas/orga-repas.component';
+import { FicheAmiComponent } from './fiche-ami/fiche-ami.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { OrgaRepasComponent } from './orga-repas/orga-repas.component';
     ListeVinComponent,
     FicheRecetteComponent,
     AmisComponent,
-    OrgaRepasComponent
+    OrgaRepasComponent,
+    FicheAmiComponent
   ],
   imports: [
     BrowserModule,

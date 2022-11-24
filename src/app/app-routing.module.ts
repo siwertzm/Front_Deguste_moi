@@ -8,6 +8,7 @@ import { RecettesComponent } from './recettes/recettes.component';
 import { FicheRecetteComponent } from './fiche-recette/fiche-recette.component';
 import { OrgaRepasComponent } from './orga-repas/orga-repas.component';
 import {AmisComponent } from './amis/amis.component';
+import {FicheAmiComponent } from './fiche-ami/fiche-ami.component';
 
 
 
@@ -19,7 +20,8 @@ const routes: Routes = [
   {component: RecettesComponent, path: "recettes"},
   {component: FicheRecetteComponent, path: "ficheRecette"},
   {component: AmisComponent, path: "amis"},
-  {component: OrgaRepasComponent, path: "OrgaRepas"}
+  {component: OrgaRepasComponent, path: "OrgaRepas"},
+  {component: FicheAmiComponent, path: "ficheAmi"},
 
 
 ];
