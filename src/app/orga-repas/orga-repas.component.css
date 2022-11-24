@@ -1,0 +1,40 @@
+.card {
+    margin-top: 30px;
+}
+
+ul {
+    height: 200px;
+    width: 60%;
+    overflow-y: scroll;
+    border:solid 1px;
+    margin-left: 150px;
+    margin-right: 150px;
+    border-top : none;
+}
+
+
+.titre {
+    margin-left: 150px;
+    margin-right: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+.underline {
+    text-decoration: underline 2px;
+
+}
+
+.recherche {
+    margin-left: 150px;
+    margin-right: 150px;
+   
+}
+.envoyer{
+    background-color: darkred;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    display:flex;
+    margin-bottom: 30px;
+}

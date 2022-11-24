@@ -13,7 +13,7 @@ import { FicheRecetteComponent } from './fiche-recette/fiche-recette.component';
 import { AmisComponent } from './amis/amis.component';
 import { OrgaRepasComponent } from './orga-repas/orga-repas.component';
 import { FicheAmiComponent } from './fiche-ami/fiche-ami.component';
-import { RecetteComponent } from './recette/recette.component';
+import { DialogueComponent } from './dialogue/dialogue.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { RecetteComponent } from './recette/recette.component';
     AmisComponent,
     OrgaRepasComponent,
     FicheAmiComponent,
-    RecetteComponent,
+    DialogueComponent
   ],
   imports: [
     BrowserModule,
