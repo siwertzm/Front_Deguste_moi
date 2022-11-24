@@ -10,6 +10,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { FicheVinComponent } from './fiche-vin/fiche-vin.component';
 import { ListeVinComponent } from './liste-vin/liste-vin.component';
 import { FicheRecetteComponent } from './fiche-recette/fiche-recette.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FicheRecetteComponent } from './fiche-recette/fiche-recette.component';
     InscriptionComponent,
     FicheVinComponent,
     ListeVinComponent,
-    FicheRecetteComponent
+    FicheRecetteComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
