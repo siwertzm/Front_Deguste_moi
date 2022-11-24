@@ -32,8 +32,8 @@ export class RecettesComponent {
     return res;
   }
 
-  go() {
-    this.http.get('http://localhost:8289/recette/').subscribe({
+  go(val: any) {
+    this.http.get('http://localhost:8289/recette/' + val).subscribe({
       next: (data) => { this.recette = data; },
       error: (err) => { console.log(err); }
 

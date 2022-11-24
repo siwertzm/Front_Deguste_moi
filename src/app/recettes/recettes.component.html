@@ -24,7 +24,7 @@
                                 <h4 class="card-title text-center">{{ r.titre }}</h4>
                                 <div *ngFor="let s of gestionSubTitle(r.sub_title)">
                                     <ul>
-                                        <li> <a (click)="go()" > {{s}} </a> </li>
+                                        <li> <a (click)="go(s)" > {{s}} </a> </li>
                                     </ul>
                                 </div>
                                 
