@@ -10,6 +10,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { FicheVinComponent } from './fiche-vin/fiche-vin.component';
 import { ListeVinComponent } from './liste-vin/liste-vin.component';
 import { FicheRecetteComponent } from './fiche-recette/fiche-recette.component';
+import { ProfileComponent } from './profile/profile.component';
 import { AmisComponent } from './amis/amis.component';
 import { OrgaRepasComponent } from './orga-repas/orga-repas.component';
 import { FicheAmiComponent } from './fiche-ami/fiche-ami.component';
@@ -25,6 +26,7 @@ import { MesVinsComponent } from './mes-vins/mes-vins.component';
     FicheVinComponent,
     ListeVinComponent,
     FicheRecetteComponent,
+    ProfileComponent,
     AmisComponent,
     OrgaRepasComponent,
     FicheAmiComponent,
