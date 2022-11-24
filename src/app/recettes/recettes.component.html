@@ -2,10 +2,15 @@
     <div>
         <h1 class="mt-5 text-center"><u>Liste des Recettes</u></h1>
     </div>
+    <form class="form-inline mt-4">
+        <input class="form-control w-75" type="search" #data placeholder="Recherche">
+        <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-5" type="submit" (click)="rechercheRecette(data.value)">Rechercher</button>
+      </form>
+
     <div class="block">
         
             <div *ngFor="let r of recette">
-                <div class="mt-5 card p-4 z-depth-3">
+                <div class="mt-4 card p-4 z-depth-3">
                     <div class="row">
                         <div class="col-sm">
                             <div class="view overlay">
@@ -25,6 +30,7 @@
                                 <div *ngFor="let s of gestionSubTitle(r.sub_title)">
                                     <ul>
                                         <li> <a (click)="go(s)" > {{s}} </a> </li>
+                                        
                                     </ul>
                                 </div>
                                 
