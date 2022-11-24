@@ -27,7 +27,7 @@ const routes: Routes = [
   {component : DialogueComponent, path: "dial"},
   {component: RecettesComponent, path: "recettes"},
   {component : MesVinsComponent, path: "mesvins"},
-  {component : CalendrierComponent, path : "calendrier"}
+  {component : CalendrierComponent, path : "calendrier"},
   {component : MesInvitationsComponent, path :"mesInvits"}
 
 ];
