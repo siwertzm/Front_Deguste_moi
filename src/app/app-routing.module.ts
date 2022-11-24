@@ -10,6 +10,7 @@ import {AmisComponent } from './amis/amis.component';
 import {FicheAmiComponent } from './fiche-ami/fiche-ami.component';
 import { DialogueComponent } from './dialogue/dialogue.component';
 import { RecettesComponent } from './recettes/recettes.component';
+import { MesVinsComponent } from './mes-vins/mes-vins.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,9 @@ const routes: Routes = [
   {component: FicheAmiComponent, path: "ficheAmi"},
   {component : DialogueComponent, path: "dial"},
   {component: RecettesComponent, path: "recettes"},
+  {component : MesVinsComponent, path: "mesvins"},
+
+
 ];
 
 @NgModule({
