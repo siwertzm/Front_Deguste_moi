@@ -26,4 +26,17 @@ export class RecettesComponent {
     });
   }
 
+  gestionSubTitle(sub: string){
+    let res = sub.split("*", 10);
+    // console.log(res);
+    return res;
+  }
+
+  go(val: any) {
+    this.http.get('http://localhost:8289/recette/' + val).subscribe({
+      next: (data) => { this.recette = data; },
+      error: (err) => { console.log(err); }
+
+    });
+  }
 }

@@ -1,0 +1,21 @@
+#profileicon{
+    width : 10em;
+    height : 10em;
+    border-radius: 50%;
+
+}
+
+.card{
+    margin : auto;
+    width:45%;
+}
+
+.column {
+    float: left;
+    width: 35%;
+  }
+
+
+.row{
+    justify-content: center;
+}
