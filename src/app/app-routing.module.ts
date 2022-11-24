@@ -9,6 +9,7 @@ import { OrgaRepasComponent } from './orga-repas/orga-repas.component';
 import {AmisComponent } from './amis/amis.component';
 import {FicheAmiComponent } from './fiche-ami/fiche-ami.component';
 import { DialogueComponent } from './dialogue/dialogue.component';
+import { RecettesComponent } from './recettes/recettes.component';
 
 
 const routes: Routes = [
@@ -21,8 +22,7 @@ const routes: Routes = [
   {component: OrgaRepasComponent, path: "OrgaRepas"},
   {component: FicheAmiComponent, path: "ficheAmi"},
   {component : DialogueComponent, path: "dial"},
-
-
+  {component: RecettesComponent, path: "recettes"},
 ];
 
 @NgModule({
