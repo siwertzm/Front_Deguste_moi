@@ -26,7 +26,7 @@ import { MesVinsComponent } from './mes-vins/mes-vins.component';
     FicheVinComponent,
     ListeVinComponent,
     FicheRecetteComponent,
-    ProfileComponent
+    ProfileComponent,
     AmisComponent,
     OrgaRepasComponent,
     FicheAmiComponent,
