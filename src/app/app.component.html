@@ -3,10 +3,11 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" onclick="location.href='index'"><img class="logo" src="https://i.ibb.co/D8LG9XF/logo.jpg" alt="Pizzeria-Logo"></a>
+    <a class="navbar-brand" onclick="location.href='index'"><img class="logo" src="https://i.ibb.co/D8LG9XF/logo.jpg"
+        alt="Pizzeria-Logo"></a>
 
     <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#basicExampleNav"
       aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,7 +17,7 @@
 
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item font-size" >
+        <li class="nav-item font-size">
           <a class="nav-link" onclick="location.href='recettes'">Recettes</a>
         </li>
         <li class="nav-item">
@@ -28,41 +29,41 @@
 
       </ul>
       <!-- Links -->
-      
+
       <form class="form-inline  ml-auto">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
       </form>
-   
 
-      <ul class="navbar-nav ">
-      
-      <div *ngIf="!isConnected">
-        <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit" onclick="location.href='login'" >Connexion</button>
+      <div *ngIf="authService.isConnected()">
+        <ul class="navbar-nav ">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-bs-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-user"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right dropdown-default">
+              aria-labelledby="navbarDropdownMenuLink-333">
+              <a class="dropdown-item">Mon profil</a>
+              <a class="dropdown-item">Mes amis</a>
+              <a class="dropdown-item">Recttes favoris</a>
+              <a class="dropdown-item">Vins favoris</a>
+              <a class="dropdown-item">Liste de course</a>
+              <a class="dropdown-item">Mes invitations</a>
+              <a class="dropdown-item">Mes événements</a>
+              <a class="dropdown-item">Calendrier</a>
+            </ul>
+          </li>
+        </ul>
       </div>
-        
-      <div *ngIf="isConnected">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-user"></i>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right dropdown-default"
-            aria-labelledby="navbarDropdownMenuLink-333">
-            <a class="dropdown-item">Mon profil</a>
-            <a class="dropdown-item">Mes amis</a>
-            <a class="dropdown-item">Recttes favoris</a>
-            <a class="dropdown-item" >Vins favoris</a>
-            <a class="dropdown-item" >Liste de course</a>
-            <a class="dropdown-item" >Mes invitations</a>
-            <a class="dropdown-item" >Mes événements</a>
-            <a class="dropdown-item">Calendrier</a>
-          </div>
-        </li>
-      </div>
-      </ul>
+
     </div>
-  
+
+    <div *ngIf="!authService.isConnected()">
+      <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit"
+        onclick="location.href='login'">Connexion</button>
+    </div>
+
     <!-- Collapsible content -->
 
   </nav>
@@ -135,7 +136,10 @@
           <h3 class="card-title text-center">AOC Volnay</h3>
           <!--Text-->
           <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
-          <p class="card-text">Entre Pommard au nord et Meursault au sud, Volnay est situé à 275 m d'altitude : ce village étroit et pentu occupe une position assez élevée dans la Côte. Adossé à la petite montagne du Chaignot, le vignoble est implanté sur des sols calcaires exposés au sud-est. Le volnay passe pour un vin féminin, suave et subtil : le vin rouge le plus fin de la Côte de Beaune. Il est assez précoce.</p>
+          <p class="card-text">Entre Pommard au nord et Meursault au sud, Volnay est situé à 275 m d'altitude : ce
+            village étroit et pentu occupe une position assez élevée dans la Côte. Adossé à la petite montagne du
+            Chaignot, le vignoble est implanté sur des sols calcaires exposés au sud-est. Le volnay passe pour un vin
+            féminin, suave et subtil : le vin rouge le plus fin de la Côte de Beaune. Il est assez précoce.</p>
           <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
           <h6 class="card-title">Couleur : </h6>
           <h6 class="card-title">Potentiel de garde : </h6>

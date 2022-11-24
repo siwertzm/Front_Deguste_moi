@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from './services/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Deguste_moi';
-  
-  isHome = false;
-  isConnected = true;
-  isAuth(ret:boolean){
-    this.isConnected = ret;
-  }
+
+title = 'Deguste_moi';
+
+isHome = false;
+  constructor(public authService:AuthService){}
+
+
 
   
 }

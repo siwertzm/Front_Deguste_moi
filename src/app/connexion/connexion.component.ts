@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth/auth.service';
 @Component({
   selector: 'app-connexion',
   templateUrl: './connexion.component.html',
@@ -12,13 +13,14 @@ export class ConnexionComponent {
   isbadlog = false;
   isConnected = false;
 
-  constructor(private http: HttpClient, private route: Router){}
+  constructor(private http: HttpClient, private route: Router, private authService: AuthService){}
   Connexion(val: any) {
     this.msg='';
     this.http.post('http://localhost:8289/login',val).subscribe({
       next: (data) => {
         this.user = data;
         if(this.user != null){
+          this.authService.setUserSession(this.user);
           console.log('connect ok');
           this.route.navigateByUrl('');
         }else{
