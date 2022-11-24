@@ -18,8 +18,8 @@ const routes: Routes = [
   {component: ListeVinComponent, path: "listeVin"},
   {component: RecettesComponent, path: "recettes"},
   {component: FicheRecetteComponent, path: "ficheRecette"},
-  {component: AmisComponent, path: "amis"}
-  {component: OrgaRepasComponent, path: "OrgaRepas"},
+  {component: AmisComponent, path: "amis"},
+  {component: OrgaRepasComponent, path: "OrgaRepas"}
 
 
 ];
