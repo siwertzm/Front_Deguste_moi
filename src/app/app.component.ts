@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Deguste_moi';
-  isConnected = true;
+  
   isHome = false;
+  isConnected = true;
+  isAuth(ret:boolean){
+    this.isConnected = ret;
+  }
+
+  
 }
