@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./recettes.component.css']
 })
 export class RecettesComponent {
+  
+  recette: any;
+  constructor(private http: HttpClient) {
+
+  }
+
+  ngOnInit(): void {
+    this.recupeRecette();
+
+  }
+
+  recupeRecette() {
+    this.http.get('http://localhost:8289/recette').subscribe({
+      next: (data) => { this.recette = data; },
+      error: (err) => { console.log(err); }
+
+    });
+  }
 
 }
