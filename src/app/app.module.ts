@@ -14,6 +14,7 @@ import { AmisComponent } from './amis/amis.component';
 import { OrgaRepasComponent } from './orga-repas/orga-repas.component';
 import { FicheAmiComponent } from './fiche-ami/fiche-ami.component';
 import { DialogueComponent } from './dialogue/dialogue.component';
+import { MesVinsComponent } from './mes-vins/mes-vins.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DialogueComponent } from './dialogue/dialogue.component';
     AmisComponent,
     OrgaRepasComponent,
     FicheAmiComponent,
-    DialogueComponent
+    DialogueComponent,
+    MesVinsComponent
   ],
   imports: [
     BrowserModule,
