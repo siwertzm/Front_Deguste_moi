@@ -44,7 +44,7 @@ import { ListeCoursesComponent } from './liste-courses/liste-courses.component';
     MesEvenementsComponent,
     RecettesFavsComponent,
     VinsFavsComponent,
-    ListeCoursesComponent
+    ListeCoursesComponent,
   ],
   imports: [
     BrowserModule,

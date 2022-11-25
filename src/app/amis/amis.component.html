@@ -4,8 +4,8 @@
         <h1 class="mt-2 text-center"><u><strong>Mes amis <i class="fas fa-user-friends fa-1x"> </i></strong></u></h1>
     </div>
     <form class="d-flex" role="search" >
-        <input class="form-control me-2" type="search" placeholder="Rechercher une personne" aria-label="Search">
-        <button type="submit"><font size="2">Search</font></button>
+        <input class="form-control basicAutoComplete" type="text" autocomplete="off"  #data  placeholder="Rechercher une personne" aria-label="Search">
+        <button type="submit" (click)="rechercheByLogin(data.value)"><font size="2">Search</font></button>
         <button><font size="5"><i class="fas fa-user-plus"></i></font></button>
 
     </form>
