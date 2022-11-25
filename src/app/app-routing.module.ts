@@ -14,7 +14,7 @@ import { MesVinsComponent } from './mes-vins/mes-vins.component';
 import { CalendrierComponent } from './calendrier/calendrier.component';
 import { MesInvitationsComponent } from './mes-invitations/mes-invitations.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { ListeCoursesComponent } from './liste-courses/liste-courses.component';
 import { MesEvenementsComponent } from './mes-evenements/mes-evenements.component';
 import { VinsFavsComponent } from './vins-favs/vins-favs.component';
 import { RecettesFavsComponent } from './recettes-favs/recettes-favs.component';
@@ -30,13 +30,14 @@ const routes: Routes = [
   {component: FicheAmiComponent, path: "ficheAmi"},
   {component : DialogueComponent, path: "dial"},
   {component: RecettesComponent, path: "recettes"},
-  {component : MesVinsComponent, path: "mesvins"},
+  {component : MesVinsComponent, path: "mesVins"},
   {component : CalendrierComponent, path : "calendrier"},
   {component : MesInvitationsComponent, path :"mesInvits"},
   {component : ProfileComponent, path :"profil"},
   {component : MesEvenementsComponent, path : "mesEvenements"},
   {component :VinsFavsComponent, path :"vinsFavs"},
-  {component : RecettesFavsComponent, path:"recettesFavs"}
+  {component : RecettesFavsComponent, path:"recettesFavs"},
+  {component : ListeCoursesComponent, path :"listeCourses"}
 
 ];
 
