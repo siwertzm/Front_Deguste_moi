@@ -8,12 +8,15 @@ import { AuthService } from './services/auth/auth.service';
 })
 export class AppComponent {
 
-title = 'Deguste_moi';
+  title = 'Deguste_moi';
 
-isHome = false;
-  constructor(public authService:AuthService){}
+  isConnected = true;
+
+  isHome = false;
+
+}
 
 
 
   
-}
+
