@@ -16,7 +16,7 @@ export class InscriptionComponent {
     
     this.http.post('http://localhost:8289/user', val).subscribe({
     next: (data)=> {console.log(data)
-      this.route.navigateByUrl('recettes');
+      this.route.navigateByUrl('login');
     
     },
     error: (err)=> {console.log(err); }
