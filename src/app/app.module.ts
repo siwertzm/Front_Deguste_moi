@@ -22,6 +22,7 @@ import { MesInvitationsComponent } from './mes-invitations/mes-invitations.compo
 import { MesEvenementsComponent } from './mes-evenements/mes-evenements.component';
 import { RecettesFavsComponent } from './recettes-favs/recettes-favs.component';
 import { VinsFavsComponent } from './vins-favs/vins-favs.component';
+import { ListeCoursesComponent } from './liste-courses/liste-courses.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { VinsFavsComponent } from './vins-favs/vins-favs.component';
     MesInvitationsComponent,
     MesEvenementsComponent,
     RecettesFavsComponent,
-    VinsFavsComponent
+    VinsFavsComponent,
+    ListeCoursesComponent
   ],
   imports: [
     BrowserModule,

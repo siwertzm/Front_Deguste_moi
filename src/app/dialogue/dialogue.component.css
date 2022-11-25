@@ -22,10 +22,7 @@ a {
     padding-bottom:25px;
     background:#e4cccc;
     width:504px;
-    border:1px solid darkred;
-    margin-top: 30px;
-    border-radius : 30px}
-    
+    border:1px solid #ACD8F0; }
   
 #loginform { padding-top:18px; }
   
@@ -39,15 +36,12 @@ a {
     background:#fff;
     height:270px;
     width:430px;
-    border:1px solid darkred;
-    overflow:auto;
-    border-radius : 10px
- }
-    
+    border:1px solid #ACD8F0;
+    overflow:auto; }
   
 #usermsg {
     width:395px;
-    border:1px solid darkred; }
+    border:1px solid #ACD8F0; }
   
 #submit { width: 60px; }
   
