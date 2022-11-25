@@ -3,7 +3,7 @@
         <h1 class="mt-5 text-center"><u>Inscription</u></h1>
     </div>
     <div class="mt-5 card p-4 z-depth-3">
-        <form>
+        <form #register="ngForm" (ngSubmit)="inscription(register.value)">
             <div class="md-form">
                 <label>Nom</label>
                 <input type="text" ngModel="" name="nom" class="form-control">
