@@ -1,0 +1,63 @@
+<div style="margin: auto; width: 60%">
+    <div>
+        <h1 class="mt-5 text-center"><u>Liste des Recettes</u></h1>
+    </div>
+    <form class="form-inline mt-4">
+        <input class="form-control w-75" type="search" #data placeholder="Recherche">
+        <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-5" type="submit" (click)="rechercheRecette(data.value)">Rechercher</button>
+      </form>
+
+    <div class="block">
+        
+            <div *ngFor="let r of recette">
+                <div class="mt-4 card p-4 z-depth-3">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="view overlay">
+                                <img class="card-img-left"
+                                    src="{{ r.source_image }}"
+                                    alt="Card image cap">
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="card-body">
+
+                                <!--Title-->
+                                <h4 class="card-title text-center">{{ r.titre }}</h4>
+                                <div *ngFor="let s of gestionSubTitle(r.sub_title)">
+                                    <ul>
+                                        <li> <a (click)="go(s)" > {{s}} </a> </li>
+                                        
+                                    </ul>
+                                </div>
+                                
+                                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                                <table class="table text-center table-bordered mt-4">
+                                    <thead class="pink darken-4 white-text">
+                                      <tr>
+                                        <th scope="col">Nombre de personne</th>
+                                        <th scope="col">Difficulté</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row"><h6 class="card-title">{{r.nombre_personne }}</h6></th>
+                                        <td><h6 class="card-title">{{r.difficulty }}</h6></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <button type="button" onclick="location.href='index'"
+                                class="btn btn-unique">Voir la recette</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+</div>

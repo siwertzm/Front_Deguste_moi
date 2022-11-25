@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./fiche-recette.component.css']
 })
 export class FicheRecetteComponent {
+
+  recette: any;
+  constructor(private http: HttpClient) {
+
+  }
+
+  ngOnInit(): void {
+
+  }
+  
 
 }
