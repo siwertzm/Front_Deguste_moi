@@ -23,7 +23,7 @@
           <a class="nav-link" onclick="location.href='listeVin'">Vins</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Organiser un repas</a>
+          <a onclick="location.href='OrgaRepas'"class="nav-link">Organiser un repas</a>
         </li>
 
       </ul>
@@ -49,14 +49,14 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right dropdown-default"
             aria-labelledby="navbarDropdownMenuLink-333">
-            <a class="dropdown-item">Mon profil</a>
-            <a class="dropdown-item">Mes amis</a>
-            <a class="dropdown-item">Recttes favoris</a>
-            <a class="dropdown-item" >Vins favoris</a>
-            <a class="dropdown-item" >Liste de course</a>
-            <a class="dropdown-item" >Mes invitations</a>
-            <a class="dropdown-item" >Mes événements</a>
-            <a class="dropdown-item">Calendrier</a>
+            <a onclick="location.href='profil'"class="dropdown-item">Mon profil</a>
+            <a onclick="location.href='amis'"class="dropdown-item">Mes amis</a>
+            <a onclick="location.href='recettesFavs'"class="dropdown-item">Recettes favoris</a>
+            <a onclick="location.href='vinsFavs'"class="dropdown-item" >Vins favoris</a>
+            <a onclick="location.href='listeCourses'"class="dropdown-item" >Liste de course</a>
+            <a onclick="location.href='mesInvits'"class="dropdown-item" >Mes invitations</a>
+            <a onclick="location.href='mesEvenements'"class="dropdown-item" >Mes événements</a>
+            <a onclick="location.href='calendrier'"class="dropdown-item">Calendrier</a>
             <br>
             <a (click)="authService.logout()" class="dropdown-item">Se déconnecter</a>
           </div>
