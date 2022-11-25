@@ -37,11 +37,11 @@
 
       <ul class="navbar-nav ">
       
-      <div *ngIf="!isConnected">
+      <div *ngIf="!authService.isConnected()">
         <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit" onclick="location.href='login'" >Connexion</button>
       </div>
         
-      <div *ngIf="isConnected">
+      <div *ngIf="authService.isConnected()">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
