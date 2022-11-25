@@ -22,7 +22,7 @@ export class ConnexionComponent {
         if(this.user != null){
           this.authService.setUserSession(this.user);
           console.log('connect ok');
-          this.route.navigateByUrl('');
+          this.route.navigateByUrl('recettes');
         }else{
           console.log('VOUS NE PASSEREZ PAS!');
           this.msg = 'identifiant ou mot de passe incorrect';
