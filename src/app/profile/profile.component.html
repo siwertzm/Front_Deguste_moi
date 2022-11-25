@@ -5,7 +5,8 @@
                 <img src="https://nord.lpo.fr/wp-content/uploads/2020/07/herisson-James-C-flickr.jpg"
                     class="img-fluid rounded border border-dark" alt="Card image cap">
                 <div class="name">
-                    <h4><strong>{{authService.getUserConnected().prenom}}  {{authService.getUserConnected().nom}}</strong> </h4>
+                    <h4><strong>{{authService.getUserConnected().prenom}}
+                            {{authService.getUserConnected().nom}}</strong> </h4>
                 </div>
             </div>
         </div>
@@ -19,7 +20,8 @@
             <p><strong>Mot de passe</strong> : {{authService.hiddenPassword()}}</p>
             <p><Strong>Mail</Strong>: niglo@gmail.com</p>
             <p><Strong>Numéro</Strong> : </p>
-            <button> Modifier le profil</button>
+            <button type="button" class="btn btn-sm" id="modify" data-toggle="modal" data-target="#exampleModal"
+                data-whatever="@getbootstrap"> Modifier le profil</button>
             <br>
             <br>
             <br>
@@ -70,4 +72,54 @@
             <h5><strong>Mon régime :</strong> xxxxxx</h5>
         </div>
 
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modifier le profil</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="md-form">
+                                    <label for="nomform" class="form-label">Nouveau nom:</label>
+                                    <input type="text" class="form-control" id="nomform">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="md-form">
+                                    <label for="prenomform" class="form-label">Nouveau prénom:</label>
+                                    <input type="text" class="form-control" id="prenomform">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="md-form">
+                                    <label for="loginform" class="form-label">Nouveau login:</label>
+                                    <input type="text" class="form-control" id="loginform">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="md-form">
+                                    <label for="mdpform" class="form-label">Nouveau mot de passe:</label>
+                                    <input type="password" class="form-control" id="mdpform">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-secondary">Confirmer</button>
+                </div>
+            </div>
+        </div>
     </div>
