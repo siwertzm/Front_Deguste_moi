@@ -41,13 +41,15 @@ h4{
     color : rgb(34, 194, 34);
     margin-left: 10px;
 }
-button{
+#modify{
    position : relative;
     background-color: rgb(199, 154, 154);
     top: -190px;
-    left: 170px;
-    font-size: small;
+    left: 160px;
+    font-size: x-small;
     border-radius: 10px;
+    text-transform: none;
+    
    
 }
 .allergie{
@@ -55,4 +57,8 @@ button{
     margin-left : 10px;
 
    
+}
+
+.btn{
+    border-radius: 10px;
 }
