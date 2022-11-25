@@ -44,7 +44,7 @@
                                     </thead>
                                     <tbody>
                                       <tr>
-                                        <th scope="row"><h6 class="card-title">{{r.nombre_personne }}</h6></th>
+                                        <th scope="row"><h6 class="card-title">{{r.nombre_personne}}</h6></th>
                                         <td><h6 class="card-title">{{r.difficulty }}</h6></td>
                                       </tr>
                                     </tbody>
@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         <div class="col-sm">
-                            <button type="button" onclick="location.href='index'"
+                            <button type="button" (click)="goToRecette(r)"
                                 class="btn btn-unique">Voir la recette</button>
                         </div>
                     </div>

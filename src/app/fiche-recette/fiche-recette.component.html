@@ -1,21 +1,23 @@
-<div style="margin: auto; width: 50%">
+<div style="margin: auto; width: 70%">
 
 
     <!--<i class="fas fa-cart-plus fa-4x"></i>-->
-
-    <div class="card w-100 ">
+    <div class="card ">
         <div class="card-body">
-           <div class="favori"> <a class="card-link" href="recettesFavs"> Ajouter aux favoris<i class="far fa-star"></i></a></div>
-            <h1 class="mt-5 text-center underline">Fiche Recette : Tajine d'agneau aux raisins et aux amandes</h1>
+            <div class="favori"> <a class="card-link" href="recettesFavs"> Ajouter aux favoris<i
+                        class="far fa-star"></i></a></div>
+            <h1 class="mt-3 text-center underline">{{recetteDetail?.titre}}</h1>
+            <br>
+
             <div class="row">
                 <div class="col-lg-6 col-md-8 mb-4 mb-md-0">
                     <div class=" view overlay text-center">
-                        <img src="https://www.hachette-vins.com/uploads/media/cache/thumb_medium/uploads/media/recettes/0001/05/719a78f2443f2372cfe04fbf50d4f45acdb2a3b2.jpeg"
-                            class="img-fluid rounded border border-dark" alt="Card image cap">
-                        <br>Nombre de personnes : 4
-                        <br>Difficulté : Moyen
-                        <br>Temps de préparation : 20 minutes
-                        <br>Temps de cuisson : 2 minutes
+                        <img src="{{recetteService.getRecetteActu().source_image}}"
+                            class="img-fluid rounded border border-dark center" alt="Card image cap">
+                        <br>Nombre de personnes : {{recetteService.getRecetteActu().nombre_personne}}
+                        <br>Difficulté : {{recetteService.getRecetteActu().difficulty}}
+                        <br>Temps de préparation : {{recetteDetail?.temps_preparation}}
+                        <br>Temps de cuisson : {{recetteDetail?.temps_cuisson}}
                         <br>
                         <br>
                     </div>
@@ -27,29 +29,12 @@
                                 <br>
                                 <h4>Préparation :</h4>
                             </div>
+                            <div *ngFor="let p of gestionPrep(recetteDetail?.liste_preparation)">
+                                <ul>
+                                    <li>{{p}}</li>
+                                </ul>
+                            </div>
 
-                            <br> 1) Préchauffez le four à 220 C (th. 7). Pelez et coupez l'échalote en fines lamelles.
-
-                            <br>2) Badigeonnez les feuilles de brick avec l'huile de tournesol et placez-les deux par
-                            deux,
-                            en
-                            quinconce,
-                            pour former une fleur.
-
-                            <br>3) Disposez-les dans des ramequins ou sur la plaque du four et faites-les dorer pendant
-                            2
-                            min.
-                            Sortez-les
-                            délicatement et laissez-les refroidir dans l'assiette de service.
-
-                            <br>4) Dans un saladier, mélangez le reste des ingrédients : le crabe, la crème fraîche, la
-                            mayonnaise,
-                            l'échalote, le basilic, la ciboulette et le persil. Arrosez ensuite du jus de 1/2 citron.
-                            Salez,
-                            poivrez
-                            et ajoutez le piment de Cayenne.
-
-                            <br>5) Remplissez les fleurs de brick froides avec cette préparation.
                         </li>
                         <li class="list-group-item">Accords recommandés :
                             <div class="card-body">
@@ -83,61 +68,17 @@
                             </tr>
                             <tr>
                                 <td> 300 g de chair de crabe</td>
-                                <td class="card-body">
-                                    <a href="#" class="card-link"><i class="fas fa-cart-plus fa-2x"></i></a>
+                                <td>
+                                    <a class="card-link"><i class="fas fa-cart-plus fa-2x"></i></a>
 
                                 </td>
                             </tr>
-                            <tr>
-                                <td> 2 cuil. à soupe de crème fraîche épaisse</td>
-                                <td class="card-body">
-                                    <a href="#" class="card-link"><i class="fas fa-cart-plus fa-2x"></i></a>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> 1/2 citron </td>
-                                <td> OK </td>
-                            </tr>
-                            <tr>
-                                <td> 1 échalote </td>
-                                <td> OK </td>
-                            </tr>
-                            <tr>
-                                <td> 2 cuil. à soupe de ciboulette ciselée</td>
-                                <td> OK </td>
-                            </tr>
-                            <tr>
-                                <td> 2 cuil. à soupe de basilic ciselé</td>
-                                <td> OK </td>
-                            </tr>
-                            <tr>
-                                <td> 2 cuil. à soupe de crème fraîche épaisse</td>
-                                <td class="card-body">
-                                    <a href="#" class="card-link"><i class="fas fa-cart-plus fa-2x"></i></a>
-                            </tr>
-                            <tr>
-                                <td> 2 cuil. à soupe de persil plat</td>
-                                <td class="card-body">
-                                    <a href="#" class="card-link"><i class="fas fa-cart-plus fa-2x"></i></a>
-                            </tr>
-                            <tr>
-                                <td> 4 cuil. à soupe de mayonnaise</td>
-                                <td> OK </td>
-                            </tr>
-                            <tr>
-                                <td> 1/4 de cuil. à café de piment de Cayenne</td>
-                                <td> OK </td>
-                            </tr>
-                            <tr>
-                                <td> 2 cuil. à soupe d'huile de tournesol</td>
-                                <td> OK </td>
-                            </tr>
-                            <tr>
-                                <td> Sel, poivre</td>
-                                <td class="card-body">
-                                    <a href="#" class="card-link"><i class="fas fa-cart-plus fa-2x"></i></a>
-                            </tr>
+                            <div *ngFor="let i of gestionPrep(recetteDetail?.liste_ingredients)">
+                                <tr>
+                                    <td> {{i}} </td>
+                                    <td> <a class="card-link"><i class="fas fa-cart-plus fa-2x"></i></a> </td>
+                                </tr>
+                            </div>
 
                         </tbody>
                     </table>
@@ -152,12 +93,47 @@
                 <div class="mask rgba-white-slight"></div>
             </a>
 
-
-
-            <div class="card-body">
-
-                <p class="card-text"></p>
-            </div>
-
         </div>
     </div>
+
+    <div class="card ">
+        <div class="card-body">
+            <h2 class="mt-3 text-center underline">APPELLATIONS PROPOSÉES POUR CETTE RECETTE</h2>
+
+            <table class="table table-striped">
+                <thead class="table-dark mt-3">
+                    <tr>
+                        <th scope="col">
+                            <h5>APPELLATIONS</h5>
+                        </th>
+                        <th scope="col">
+                            <h5> Liste des vins</h5>
+                        </th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td> 8 feuilles de brick </td>
+                        <td>
+                            <div class="text-center"><button type="button" onclick="location.href='index'"
+                                    class="btn btn-unique btn-sm">Voir la
+                                    liste des vins</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <div *ngFor="let a of gestionPrep(recetteDetail?.appellations_recommandees)">
+                        <tr>
+                            <td> {{a}} </td>
+                            <div class="text-center"><button type="button" onclick="location.href='index'"
+                                class="btn btn-unique btn-sm">Voir la
+                                liste des vins</button>
+                        </div>
+                        </tr>
+                    </div>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

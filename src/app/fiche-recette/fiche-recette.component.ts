@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { RecetteService } from '../services/recette.service';
 
 @Component({
   selector: 'app-fiche-recette',
@@ -8,13 +9,27 @@ import { Component } from '@angular/core';
 })
 export class FicheRecetteComponent {
 
+  recetteDetail: any;
   recette: any;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public recetteService: RecetteService) {
 
   }
 
   ngOnInit(): void {
+    this.recupeRecetteDetail();
+  }
 
+  recupeRecetteDetail() {
+    this.http.get('http://localhost:8289/recette-detail/' + this.recetteService.getRecetteActu().id).subscribe({
+      next: (data)=> { this.recetteDetail = data; },
+      error: (err) => { console.log(err); }
+    })
+  }
+
+  gestionPrep(prep: string){
+    let res = prep.split("*", 100);
+    // console.log(res);
+    return res;
   }
   
 

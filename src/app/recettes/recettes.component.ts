@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { RecetteService } from '../services/recette.service';
 
 @Component({
   selector: 'app-recettes',
@@ -9,7 +11,7 @@ import { Component } from '@angular/core';
 export class RecettesComponent {
   
   recette: any;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private recetteService: RecetteService, private route: Router) {
 
   }
 
@@ -42,8 +44,17 @@ export class RecettesComponent {
 
   rechercheRecette(val: string) {
     this.http.get('http://localhost:8289/recette/titre/' + val).subscribe({
-      next: (data)=> { this.recette = data; console.log(data)},
+      next: (data)=> { this.recette = data;},
       error: (err) => { console.log(err);}
     });
   }
-}
+
+  goToRecette(val: any) {
+    this.recetteService.saveRecetteActu(val);
+    this.route.navigateByUrl('ficheRecette');
+
+  }
+
+
+  }
+
