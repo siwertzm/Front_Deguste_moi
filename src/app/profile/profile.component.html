@@ -5,7 +5,7 @@
                 <img src="https://nord.lpo.fr/wp-content/uploads/2020/07/herisson-James-C-flickr.jpg"
                     class="img-fluid rounded border border-dark" alt="Card image cap">
                 <div class="name">
-                    <h4><strong>Niglo Gérard</strong> </h4>
+                    <h4><strong>{{authService.getUserConnected().prenom}}  {{authService.getUserConnected().nom}}</strong> </h4>
                 </div>
             </div>
         </div>
@@ -15,8 +15,8 @@
 
 
 
-            <p><Strong>Login</Strong> : abc </p>
-            <p><strong>Mot de passe</strong> : *****</p>
+            <p><Strong>Login</Strong> : {{authService.getUserConnected().login}} </p>
+            <p><strong>Mot de passe</strong> : {{authService.hiddenPassword()}}</p>
             <p><Strong>Mail</Strong>: niglo@gmail.com</p>
             <p><Strong>Numéro</Strong> : </p>
             <button> Modifier le profil</button>
