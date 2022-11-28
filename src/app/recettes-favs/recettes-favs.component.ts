@@ -13,6 +13,7 @@ export class RecettesFavsComponent {
 
   recette: any;
   userConnected : any;
+  status: any;
   constructor(private http: HttpClient, private service: AuthService, private recetteService: RecetteService, private route: Router) {
 
   }
@@ -25,7 +26,7 @@ export class RecettesFavsComponent {
 
   recupeFavoris(val: any) {
     this.http.get('http://localhost:8289/favori/user/' + val).subscribe({
-      next: (data) => { this.recette = data; console.log(this.recette); console.log(this.userConnected.id)},
+      next: (data) => { this.recette = data;},
       error: (err) => { console.log(err); }
 
     });
@@ -51,6 +52,11 @@ export class RecettesFavsComponent {
     this.recetteService.saveRecetteActu(val);
     this.route.navigateByUrl('ficheRecette');
 
+  }
+
+  supFavoris(val: any){
+    this.http.delete('http://localhost:8289/favori/'+ val)
+    .subscribe(()=> this.status = 'delete success');
   }
 
 }
