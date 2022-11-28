@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth/auth.service';
 import { RecetteService } from '../services/recette.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class FicheRecetteComponent {
 
   recetteDetail: any;
   recette: any;
-  constructor(private http: HttpClient, public recetteService: RecetteService) {
+  constructor(private http: HttpClient, public recetteService: RecetteService, public service: AuthService) {
 
   }
 
@@ -27,9 +28,18 @@ export class FicheRecetteComponent {
   }
 
   gestionPrep(prep: string){
-    let res = prep.split("*", 100);
+    let res = prep?.split("*", 100);
     // console.log(res);
     return res;
+  }
+
+  ajoutFavoris(){
+    
+    let fav = {user: this.service.getUserConnected(), recette: this.recetteService.getRecetteActu()}
+    this.http.post('http://localhost:8289/favori', fav).subscribe({
+      next: (data)=> {console.log(data)},
+      error: (err)=> {console.log(err)}
+    })
   }
   
 
