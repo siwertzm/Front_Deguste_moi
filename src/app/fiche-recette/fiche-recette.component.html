@@ -36,12 +36,7 @@
                             </div>
 
                         </li>
-                        <li class="list-group-item">Accords recommandés :
-                            <div class="card-body">
-                                <a href="#" class="card-link"><i class="fas fa-cart-plus fa-2x"></i></a>
-
-                            </div>
-                        </li>
+                       
                     </ul>
 
                 </div>
@@ -62,23 +57,12 @@
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td> 8 feuilles de brick </td>
-                                <td> OK </td>
-                            </tr>
-                            <tr>
-                                <td> 300 g de chair de crabe</td>
-                                <td>
-                                    <a class="card-link"><i class="fas fa-cart-plus fa-2x"></i></a>
-
-                                </td>
-                            </tr>
-                            <div *ngFor="let i of gestionPrep(recetteDetail?.liste_ingredients)">
-                                <tr>
-                                    <td> {{i}} </td>
-                                    <td> <a class="card-link"><i class="fas fa-cart-plus fa-2x"></i></a> </td>
+                            
+                                <tr *ngFor="let i of gestionPrep(recetteDetail?.liste_ingredients)">
+                                    <td > {{i}} </td>
+                                   <td> <a class="card-link"><i class="fas fa-cart-plus fa-2x"></i></a> </td>
                                 </tr>
-                            </div>
+                          
 
                         </tbody>
                     </table>
@@ -114,24 +98,15 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td> 8 feuilles de brick </td>
-                        <td>
-                            <div class="text-center"><button type="button" onclick="location.href='index'"
-                                    class="btn btn-unique btn-sm">Voir la
-                                    liste des vins</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <div *ngFor="let a of gestionPrep(recetteDetail?.appellations_recommandees)">
-                        <tr>
+                   
+                        <tr *ngFor="let a of gestionPrep(recetteDetail?.appellations_recommandees)">
                             <td> {{a}} </td>
                             <div class="text-center"><button type="button" onclick="location.href='index'"
                                 class="btn btn-unique btn-sm">Voir la
                                 liste des vins</button>
                         </div>
                         </tr>
-                    </div>
+                  
                 </tbody>
             </table>
         </div>
