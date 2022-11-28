@@ -23,6 +23,7 @@ import { MesEvenementsComponent } from './mes-evenements/mes-evenements.componen
 import { RecettesFavsComponent } from './recettes-favs/recettes-favs.component';
 import { VinsFavsComponent } from './vins-favs/vins-favs.component';
 import { ListeCoursesComponent } from './liste-courses/liste-courses.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ListeCoursesComponent } from './liste-courses/liste-courses.component';
     RecettesFavsComponent,
     VinsFavsComponent,
     ListeCoursesComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

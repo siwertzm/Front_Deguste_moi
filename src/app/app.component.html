@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark"> 
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" onclick="location.href='index'"><img class="logo" src="https://i.ibb.co/D8LG9XF/logo.jpg" alt="Pizzeria-Logo"></a>
+    <a class="navbar-brand" routerLink=""><img class="logo" src="https://i.ibb.co/D8LG9XF/logo.jpg" alt="Pizzeria-Logo"></a>
 
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -38,7 +38,7 @@
       <ul class="navbar-nav ">
       
       <div *ngIf="!authService.isConnected()">
-        <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit" onclick="location.href='login'" >Connexion</button>
+        <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit" routerLink='login' >Connexion</button>
       </div>
         
       <div *ngIf="authService.isConnected()">
@@ -49,13 +49,13 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right dropdown-default"
             aria-labelledby="navbarDropdownMenuLink-333">
-            <a onclick="location.href='profil'"class="dropdown-item">Mon profil</a>
-            <a onclick="location.href='amis'"class="dropdown-item">Mes amis</a>
-            <a onclick="location.href='recettesFavs'"class="dropdown-item">Recettes favoris</a>
-            <a onclick="location.href='vinsFavs'"class="dropdown-item" >Vins favoris</a>
-            <a onclick="location.href='listeCourses'"class="dropdown-item" >Liste de course</a>
-            <a onclick="location.href='mesInvits'"class="dropdown-item" >Mes invitations</a>
-            <a onclick="location.href='mesEvenements'"class="dropdown-item" >Mes événements</a>
+            <a routerLink='profil' class="dropdown-item">Mon profil</a>
+            <a routerLink='amis' class="dropdown-item">Mes amis</a>
+            <a routerLink='recettesFavs' class="dropdown-item">Recettes favoris</a>
+            <a routerLink='vinsFavs' class="dropdown-item" >Vins favoris</a>
+            <a routerLink='listeCourses' class="dropdown-item" >Liste de course</a>
+            <a routerLink='mesInvits' class="dropdown-item" >Mes invitations</a>
+            <a routerLink='mesEvenements' class="dropdown-item" >Mes événements</a>
             <a (click)="authService.logout()" class="dropdown-item">Se déconnecter</a>
           </div>
         </li>
@@ -73,88 +73,4 @@
  
   <!--/.Navbar-->
 
-
-<div *ngIf="isHome">
-  <div style="margin: auto; width: 70%">
-    <!-- Card deck -->
-    <div class="card-deck mt-3 ml-5 mr-5">
-
-      <!-- Card Recette du Jour -->
-      <div class="card mb-4 width: 20%">
-        <h2 class="card-title text-center mt-3"><strong>RECETTE DU JOUR</strong></h2>
-
-        <!--Card image-->
-        <div class="view overlay">
-          <img class="card-img-top"
-            src="https://www.hachette-vins.com/uploads/media/cache/thumb_medium/uploads/media/recettes/0001/05/fbd4f25a25ff68f96a722a037e829c94b4db046f.jpeg"
-            alt="Card image cap">
-          <a href="#!">
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-
-        <!--Card content-->
-        <div class="card-body">
-
-          <!--Title-->
-          <h3 class="card-title text-center">Aiguillettes de canard aux mirabelles</h3>
-          <br>
-          <h6 class="card-title">Nombre de personne : </h6>
-          <!--Text-->
-          <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
-          <p class="card-text">Gibier à plumes, à Cuisson assez courte associée à l'onctuosité du foie gras, la crème et
-            le Porto. Grâce au vinaigre, le plat s'équilibre avec caractère. Choisir un vin corsé avec la couleur
-            correspondante au choix et type de Porto. L'accord Porto (par exemple un Tawny 20 ans d'âge) est la solution
-            de facilité.</p>
-          <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-          <h6 class="card-title">Temps de Prépararion : </h6>
-          <h6 class="card-title">Temps de cuisson : </h6>
-          <h6 class="card-title">Difficulté : </h6>
-          <div class="text-center">
-            <button type="button" class="btn btn-light-blue btn-md">VOIR LA RECETTE</button>
-          </div>
-
-        </div>
-
-      </div>
-      <!-- Card Recette du jour -->
-
-      <!-- Card vin du jour -->
-      <div class="card mb-4 width: 20%">
-        <h2 class="card-title text-center mt-3"><strong>VIN DU JOUR</strong></h2>
-
-        <!--Card image-->
-        <div class="view overlay">
-          <img class="card-img-top"
-            src="https://www.hachette-vins.com/uploads/media/tourisme/0001/06/d707a6dbae1a3391b1af81dc91cbf10532a6c077.jpeg"
-            alt="Card image cap">
-          <a href="#!">
-            <div class="mask rgba-white-slight"></div>
-          </a>
-        </div>
-
-        <!--Card content-->
-        <div class="card-body">
-
-          <!--Title-->
-          <h3 class="card-title text-center">AOC Volnay</h3>
-          <!--Text-->
-          <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
-          <p class="card-text">Entre Pommard au nord et Meursault au sud, Volnay est situé à 275 m d'altitude : ce village étroit et pentu occupe une position assez élevée dans la Côte. Adossé à la petite montagne du Chaignot, le vignoble est implanté sur des sols calcaires exposés au sud-est. Le volnay passe pour un vin féminin, suave et subtil : le vin rouge le plus fin de la Côte de Beaune. Il est assez précoce.</p>
-          <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-          <h6 class="card-title">Couleur : </h6>
-          <h6 class="card-title">Potentiel de garde : </h6>
-          <h6 class="card-title">Principaux cépages : </h6>
-          <div class="text-center">
-            <button type="button" class="btn btn-light-blue btn-md">VOIR LA FICHE</button>
-          </div>
-
-        </div>
-      </div>
-      <!-- Card vin du jour -->
-
-    </div>
-    <!-- Card deck -->
-  </div>
-</div>
 <router-outlet></router-outlet>

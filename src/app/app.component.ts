@@ -1,5 +1,8 @@
+import { formatDate } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { UrlHandlingStrategy } from '@angular/router';
+import { Router, UrlHandlingStrategy } from '@angular/router';
 import { AuthService } from './services/auth/auth.service';
 
 @Component({
@@ -12,9 +15,9 @@ export class AppComponent {
   title = 'Deguste_moi';
   
 
-  constructor(public authService: AuthService){}
+  constructor(public authService: AuthService, private route: Router, private http: HttpClient){}
 
-  isHome = false;
+  isHome= true;
 
   public url ="";
   urlOrga(){
@@ -27,7 +30,11 @@ export class AppComponent {
     return this.url;
 
   }
+
+  ngOnInit(): void {
   
+  }
+
 
 }
 
