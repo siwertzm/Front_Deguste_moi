@@ -19,6 +19,7 @@ import { MesEvenementsComponent } from './mes-evenements/mes-evenements.componen
 import { VinsFavsComponent } from './vins-favs/vins-favs.component';
 import { RecettesFavsComponent } from './recettes-favs/recettes-favs.component';
 
+
 const routes: Routes = [
   {component: ConnexionComponent, path: "login"},
   {component: InscriptionComponent, path: "sign"},
