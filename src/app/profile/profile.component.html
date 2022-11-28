@@ -18,8 +18,8 @@
 
             <p><Strong>Login</Strong> : {{authService.getUserConnected().login}} </p>
             <p><strong>Mot de passe</strong> : {{authService.hiddenPassword()}}</p>
-            <p><Strong>Mail</Strong>: niglo@gmail.com</p>
-            <p><Strong>Numéro</Strong> : </p>
+            <p><Strong>Mail</Strong>: {{authService.getUserConnected().email}}</p>
+            <p><Strong>Numéro</Strong> : {{authService.getUserConnected().tel}}</p>
             <button type="button" class="btn btn-sm" id="modify" data-toggle="modal" data-target="#exampleModal"
                 data-whatever="@getbootstrap"> Modifier le profil</button>
             <br>
@@ -65,35 +65,35 @@
     <div class="allergie row">
         <div class="col-lg-6 col-md-8 mb-4 mb-md-0">
             <div class=" view overlay ">
-                <h5><strong>Mes allergies :</strong> xxxxxx</h5>
+                <h5><strong>Mes allergies :</strong> {{authService.getUserConnected().allergie}}</h5>
             </div>
         </div>
         <div class="col-lg-6 col-md-8 mb-4 mb-md-0">
-            <h5><strong>Mon régime :</strong> xxxxxx</h5>
+            <h5><strong>Mon régime :</strong> {{NomRegime(authService.getUserConnected().regime)}}</h5>
         </div>
 
     </div>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+        aria-hidden="true" #myModal>
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Modifier le profil</h5>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form  #registerForm="ngForm" (ngSubmit)="updateUser(registerForm.value)">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="md-form">
                                     <label for="nomform" class="form-label">Nouveau nom:</label>
-                                    <input type="text" class="form-control" id="nomform">
+                                    <input type="text" ngModel="" name="nom" class="form-control" id="nomform">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="md-form">
                                     <label for="prenomform" class="form-label">Nouveau prénom:</label>
-                                    <input type="text" class="form-control" id="prenomform">
+                                    <input type="text" ngModel="" name="prenom" class="form-control" id="prenomform">
                                 </div>
                             </div>
                         </div>
@@ -101,25 +101,62 @@
                             <div class="col-sm-6">
                                 <div class="md-form">
                                     <label for="loginform" class="form-label">Nouveau login:</label>
-                                    <input type="text" class="form-control" id="loginform">
+                                    <input type="text" ngModel="" name="login" class="form-control" id="loginform">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="md-form">
                                     <label for="mdpform" class="form-label">Nouveau mot de passe:</label>
-                                    <input type="password" class="form-control" id="mdpform">
+                                    <input type="password" ngModel="" name="mdp" class="form-control" id="mdpform">
                                 </div>
                             </div>
 
                         </div>
 
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="md-form">
+                                    <label for="emailform" class="form-label">Nouvelle adresse mail:</label>
+                                    <input type="text" ngModel="" name="email" class="form-control" id="emailform">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="md-form">
+                                    <label for="telform" class="form-label">Nouveau no de téléphone:</label>
+                                    <input type="text" ngModel="" name="tel" class="form-control" id="telform">
+                                </div>
+                            </div>
 
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="md-form">
+                                    <label for="allergiesform" class="form-label">Changer les allergies:</label>
+                                    <input type="text" ngModel="" name="allergie" class="form-control"
+                                        id="allergiesform">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <p>Modifier le régime :</p>
+                                <select class="browser-default custom-select" name="regime" ngModel=""
+                                    placeholder="Choisis ton régime">
+                                    <option value="1">Aucun</option>
+                                    <option value="2">Végétarien</option>
+                                    <option value="3">Vegan</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
+                            <button type="submit" class="btn btn-secondary">Confirmer</button>
+                        </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
-                    <button type="button" class="btn btn-secondary">Confirmer</button>
-                </div>
+
             </div>
         </div>
     </div>

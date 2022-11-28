@@ -20,15 +20,23 @@
                 <label>Password</label>
                 <input type="password" ngModel="" name="mdp" class="form-control">
             </div>
-            <select class="browser-default custom-select">
-                <option selected>Choisi ton régime</option>
+            <div class="md-form">
+                <label>email</label>
+                <input type="text" ngModel="" name="email" class="form-control">
+            </div>
+            <div class="md-form">
+                <label>Téléphone</label>
+                <input type="text" ngModel="" name="tel" class="form-control">
+            </div>
+            <p>Choisis ton régime :</p>
+            <select class="browser-default custom-select" name="regime" ngModel="" placeholder ="Choisis ton régime">
                 <option value="1">Aucun</option>
                 <option value="2">Végétarien</option>
                 <option value="3">Vegan</option>
               </select>
             <div class="md-form">
                 <label>Allergie</label>
-                <input type="text" ngModel="" name="alergie" class="form-control">
+                <input type="text" ngModel="" name="allergie" class="form-control">
             </div>
             <button type="submit" class="btn btn-unique btn-block">Inscription</button>
         </form>
