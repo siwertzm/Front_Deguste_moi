@@ -60,3 +60,7 @@ input[type=submit] {
   background-color: DodgerBlue !important;
   color: #ffffff;
 }
+
+.bouton {
+  right: 0%;
+}
