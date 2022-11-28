@@ -23,6 +23,11 @@ import { MesEvenementsComponent } from './mes-evenements/mes-evenements.componen
 import { RecettesFavsComponent } from './recettes-favs/recettes-favs.component';
 import { VinsFavsComponent } from './vins-favs/vins-favs.component';
 import { ListeCoursesComponent } from './liste-courses/liste-courses.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {ReactiveFormsModule} from '@angular/forms';
+
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
@@ -52,7 +57,12 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,6 +20,7 @@ import { VinsFavsComponent } from './vins-favs/vins-favs.component';
 import { RecettesFavsComponent } from './recettes-favs/recettes-favs.component';
 import { HomeComponent } from './home/home.component';
 
+
 const routes: Routes = [
   {component: ConnexionComponent, path: "login"},
   {component: InscriptionComponent, path: "sign"},
