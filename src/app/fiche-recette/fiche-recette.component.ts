@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppelationService } from '../appelation.service';
 import { AuthService } from '../services/auth/auth.service';
 import { RecetteService } from '../services/recette.service';
+import { VinService } from '../vin.service';
 
 @Component({
   selector: 'app-fiche-recette',
@@ -12,7 +15,7 @@ export class FicheRecetteComponent {
 
   recetteDetail: any;
   recette: any;
-  constructor(private http: HttpClient, public recetteService: RecetteService, public service: AuthService) {
+  constructor(private http: HttpClient, public recetteService: RecetteService, public service: AuthService, private route: Router, private AppelService: AppelationService) {
 
   }
 
@@ -40,6 +43,11 @@ export class FicheRecetteComponent {
       next: (data)=> {console.log(data)},
       error: (err)=> {console.log(err)}
     })
+  }
+
+  goToVins(val: any){
+    this.AppelService.saveAppelation(val);
+    this.route.navigateByUrl('listeVin');
   }
   
 
