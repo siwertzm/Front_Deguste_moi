@@ -78,12 +78,12 @@ export class AmisComponent implements OnInit{
     let val1=this.service.getUserConnected()
     console.log(val);
     console.log(val1);
-    this.http.patch('http://localhost:8289/demande/accept/'+val1+'/'+val,{"valide": "true"}).subscribe({
+    this.http.put('http://localhost:8289/demande/accept/'+val1+'/'+val,null).subscribe({
       next: (data)=> {console.log(data)},
       error: (err)=> {console.log(err);}
     });
-  }
-*/
+  }*/
+
   refusDemande(val: any){
     
     this.http.delete('http://localhost:8289/demande/reject/'+ val).subscribe(()=> this.status = 'delete success');
