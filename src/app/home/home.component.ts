@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth/auth.service';
 import { RecetteService } from '../services/recette.service';
+import { VinService } from '../vin.service';
 
 @Component({
   selector: 'app-home',
@@ -14,12 +15,14 @@ export class HomeComponent {
   title = 'Deguste_moi';
   
 
-  constructor(public authService: AuthService, private route: Router, private recetteService: RecetteService, private http: HttpClient){}
+  constructor(public authService: AuthService, private route: Router, private recetteService: RecetteService, private http: HttpClient, private vinService: VinService){}
 
   isHome= true;
   recette: any;
   recetteDetail: any;
   id_recette: any;
+  vin: any;
+  vinDetail: any;
 
   public url ="";
   urlOrga(){
@@ -41,14 +44,17 @@ export class HomeComponent {
     if (JSON.parse(date) != null){
       if (JSON.parse(date) != JSON.parse(JSON.stringify(datenow.getDate()))){
         this.recetteJour();
+        this.vinJour();
         console.log('test pas jour');
       } else {
         this.recetteJourByID(localStorage.getItem('id'));
+        this.vinJourById(localStorage.getItem('id'));
         console.log('test meme jour');
         
       }
     } else {
       this.recetteJour();
+      this.vinJour();
       console.log('date null');
     }
   }
@@ -85,5 +91,35 @@ export class HomeComponent {
 
   }
   
+  vinJour(){
+    const vin = this.http.get('http://localhost:8289/vin/random').toPromise();
+    vin.then(data=>{
+      let date = new Date();
+      localStorage.setItem('date', JSON.stringify(date.getDate()))
+      this.vin = data;
+      localStorage.setItem('id', JSON.stringify(this.vin.id))
+      this.recupVinDetail(this.vin.id);
+    })
+  }
+  recupVinDetail(val: any){
+    this.http.get('http://localhost:8289/vin-detail/' + val).subscribe({
+      next: (data) => { this.vinDetail = data; console.log(this.vin);},
+      error: (err) => { console.log(err); }
+    })
+  }
+
+  goToVin(val: any) {
+    this.vinService.saveVinActu(val);
+    this.route.navigateByUrl('ficheVin');
+
+  }
+
+  vinJourById(val : any){
+    const vin = this.http.get('http://localhost:8289/vins/' + val).toPromise();
+    vin.then(data=>{
+      this.vin = data;
+      this.recupVinDetail(this.vin.id);
+    })
+  }
 
 }

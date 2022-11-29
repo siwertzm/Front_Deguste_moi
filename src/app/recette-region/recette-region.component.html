@@ -5,16 +5,16 @@
     <form class="form-inline mt-4">
         <input class="form-control w-75" type="search" #data placeholder="Recherche">
         <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-5" type="submit"
-            (click)="rechercheVin(data.value)">Rechercher</button>
+            (click)="rechercheRecette(data.value)">Rechercher</button>
     </form>
     
-    <div class="block" *ngFor="let v of vin">
+    <div class="block" *ngFor="let r of recette">
         <div class="mt-5 card p-4 z-depth-3">
             <div class="row">
                 <div class="col-sm-4">
                     <div class="view overlay">
                         <img class="card-img-left"
-                            src="{{v.lien_image}}"
+                            src="{{r.lien_image}}"
                             alt="Card image cap">
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -25,16 +25,16 @@
                     <div class="card-body">
 
                         <!--Title-->
-                        <h3 class="card-title text-center">{{v.titre}}</h3>
+                        <h3 class="card-title text-center">{{r.titre}}</h3>
                         <!--Title-->
-                        <h4 class="card-title text-center">{{v.sous_titre}}</h4>
+                        <h4 class="card-title text-center">{{r.sous_titre}}</h4>
                         <!--Text-->
-                        <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
-                        <p class="card-text">{{v.description}}
+                        <h6 class="card-title"><strong>Description</strong></h6>
+                        <p class="card-text">{{r.description}}
                         </p>
                         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                        <h5 class="card-title">Couleur : {{v.type}}</h5>
-                        <h5 class="card-title"><a (click)="go(v.region)">Appelation : {{v.region}}</a></h5>
+                        <h5 class="card-title">Couleur : {{r.type}}</h5>
+                        <h5 class="card-title"><a (click)="go(r.region)">Appelation : {{r.region}}</a></h5>
                     </div>
                 </div>
             </div>

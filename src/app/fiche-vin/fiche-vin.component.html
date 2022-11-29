@@ -1,226 +1,53 @@
 <div style="margin: auto; width: 70%">
-    <!-- Card deck -->
-    <div class="card-deck mt-3 ml-5 mr-5">
+     <!--<i class="fas fa-cart-plus fa-4x"></i>-->
+     <div class="card ">
+        <div class="card-body">
+            <div class="favori"> <a class="card-link" (click)="ajoutFavoris()"> Ajouter aux favoris<i
+                        class="far fa-star"></i></a></div>
+            <h1 class="mt-3 text-center underline">{{vinDetail?.titre}}</h1>
+            <br>
 
-        <!-- Card vin du jour -->
-        <div class="card mb-4 width: 20%">
-            <div class="favori"> <a class="card-link" href="vinsFavs"> Ajouter aux favoris<i class="far fa-star"></i></a></div>
-            <h2 class="card-title text-center mt-3"><strong>PRESTIGE DE L'ESPÉRANCE</strong></h2>
+            
+               
+                    <div class=" view overlay text-center"> 
+                        <img src="{{vinService.getVinActu().source_image}}"
+                            class="img-fluid rounded border border-dark center" alt="Card image cap">
+                        <br>Année : {{vinService.getVinActu().sous_titre}}
+                        <br>Appelation : {{vinService.getVinActu().region}}
+                        <br>Type : {{vinService.getVinActu().type}}
+                        <br>Elevage : {{vinDetail?.elevage}}
+                        <br>Nombre de bouteilles : {{vinDetail?.nb_bouteilles}}
+                        <br>Note : {{vinDetail?.note}}
 
-            <!--Card image-->
-            <div class="view overlay">
-                <img class="card-img-top"
-                    src="https://www.hachette-vins.com/uploads/media/tourisme/0001/06/d707a6dbae1a3391b1af81dc91cbf10532a6c077.jpeg"
-                    alt="Card image cap">
-                <a href="#!">
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
 
-            <!--Card content-->
-            <div class="card-body">
+                        <br>
+                        <br>
+                    </div>
 
-                <!--Title-->
-                <h3 class="card-title text-center">Sur lie 2021 - blanc</h3>
-                <!--Text-->
-                <h6 class="card-title"><strong>DÉTAIL DU VIN</strong> Prestige De L'espérance Sur Lie 2021 blanc </h6>
-                <div class="card-text">
-                    <p class="card-text"><strong>Quelle note du Guide Hachette le vin Prestige De L'espérance Sur Lie
-                            2021
-                            blanc a-t-il obtenu ? Dans quelle édition a-t-il été noté ?</strong>
-                        <br>
-                        Le Prestige De L'espérance Sur Lie 2021 blanc a obtenu la note de 2 étoiles, ce qui correspond à
-                        un
-                        vin remarquable. Les jurys lui ont décerné un Coup de Cœur. Ce vin a été noté dans l’édition
-                        2023 du
-                        Guide Hachette Vins.
-                        <br><br>
-                        <strong>Combien de bouteilles de Prestige De L'espérance Sur Lie 2021 blanc ont-elles été
-                            produites
-                            ?</strong>
-                        <br>
-                        7 333 bouteilles de cette cuvée ont été produites.
-                        <br><br>
-                        <strong>Comment est élevé le vin Prestige De L'espérance Sur Lie 2021 blanc ?</strong>
-                        <br>
-                        Ce vin est élevé en cuve.
-                        <br><br>
-                        <strong>Quand est-il conseillé de boire le Prestige De L'espérance Sur Lie 2021 blanc ?</strong>
-                        <br>
-                        Ce vin doit être dégusté de préférence entre 2022 - 2026.
-                        <br><br>
-                        <strong> À quelle température est-il recommandé de boire le vin Prestige De L'espérance Sur Lie
-                            2021
-                            blanc ?</strong>
-                        <br>
-                        Nous recommandons de servir ce vin à une température comprise entre 08 à 11 °C.
-                        <br><br>
+                    <ul class="list-group list-group-flush">
 
-                        <strong>Avec quel plat servir le vin Prestige De L'espérance Sur Lie 2021 blanc ?</strong>
-                        <br>
-                        Ce vin s’accordera parfaitement avec : Apéritif / Fromages / Fruits de mers, crustacés.
-                    </p>
-                </div>
-                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                <div class="mt-3">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                              <th scope="col"><strong>Garde</strong> </th>
-                              <th scope="col"><strong>Production</strong> </th>
-                              <th scope="col"><strong>Elevage </strong></th>
-                              <th scope="col"><strong>Température</strong> </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">2022-2026</th>
-                              <td>7333 bouteilles</td>
-                              <td>En cuve</td>
-                              <td>08 à 11°C</td>
-                            </tr>
-                            
-                           
-                          </tbody>                   
-                    </table>
-                </div>
-            </div>
+                        <li class="list-group-item" style="text-align: justify">
+                            <div class=" preparation text-center">
+                                <br>
+                                <h4>Description :</h4>
+                            </div>
+                            <div *ngFor="let p of gestionPrep(vinDetail?.description)">
+                                <ul>
+                                    <li>{{p}}</li>
+                                </ul>
+                            </div>
+
+                        </li>
+                       
+                    </ul>
         </div>
-        <!-- Card vin du jour -->
-
-    </div>
-    <!-- Card deck -->
-
-    <div class="mt-5 card p-4 z-depth-3">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <div class="view overlay">
-                <img class="card-img-left"
-                    src="https://www.hachette-vins.com/uploads/media/cache/thumb_medium/uploads/media/recettes/0001/05/719a78f2443f2372cfe04fbf50d4f45acdb2a3b2.jpeg"
-                    alt="Card image cap">
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            </div>
-            <div class="col-lg-6 col-md-12 mb-0 mb-md-0">
-            <div class="card-body">
-    
-                <!--Title-->
-                <h3 class="card-title text-center">Tajine d'agneau aux raisins et aux amandes</h3>
-                <!--Text-->
-                <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
-                <p class="card-text">Le gingembre, les raisins et les amandes favorisent une sauce un peu plus amère et appellent de préférence
-                     vin blanc (voire un rosé). Celui-ci doit être du Sud, d'une acidité basse, d'un caractère sec et gras (un vin de pays des 
-                     Côtes catalanes cépage muscat ou un vin de pays d'Ardèche cépage viognier, un tavel ou un lirac rosé). Sa richesse aromatique
-                      est nécessaire pour faire face au gingembre. Un vin rouge devra être dans le même esprit mais avec des tanins ronds 
-                      (beaumes-de-venise ou languedoc Montpeyroux). L'appellation costières-de-nîmes conviendra dans les trois couleurs.
-                </p>
-                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                <h6 class="card-title">Temps de préparation : </h6>
-                <h6 class="card-title">Temps de cuisson : </h6>
-                <h6 class="card-title">Difficulté : </h6>
-            </div>
-            </div>
-        </div>
-    </div>
-    <div class="mt-5 card p-4 z-depth-3">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <div class="view overlay">
-                <img class="card-img-left"
-                    src="https://www.hachette-vins.com/uploads/media/cache/thumb_medium/uploads/media/recettes/0001/05/719a78f2443f2372cfe04fbf50d4f45acdb2a3b2.jpeg"
-                    alt="Card image cap">
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            </div>
-            <div class="col-lg-6 col-md-12 mb-0 mb-md-0">
-            <div class="card-body">
-    
-                <!--Title-->
-                <h3 class="card-title text-center">Tajine d'agneau aux raisins et aux amandes</h3>
-                <!--Text-->
-                <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
-                <p class="card-text">Le gingembre, les raisins et les amandes favorisent une sauce un peu plus amère et appellent de préférence
-                     vin blanc (voire un rosé). Celui-ci doit être du Sud, d'une acidité basse, d'un caractère sec et gras (un vin de pays des 
-                     Côtes catalanes cépage muscat ou un vin de pays d'Ardèche cépage viognier, un tavel ou un lirac rosé). Sa richesse aromatique
-                      est nécessaire pour faire face au gingembre. Un vin rouge devra être dans le même esprit mais avec des tanins ronds 
-                      (beaumes-de-venise ou languedoc Montpeyroux). L'appellation costières-de-nîmes conviendra dans les trois couleurs.
-                </p>
-                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                <h6 class="card-title">Temps de préparation : </h6>
-                <h6 class="card-title">Temps de cuisson : </h6>
-                <h6 class="card-title">Difficulté : </h6>
-            </div>
-            </div>
-        </div>
-    </div>
-    <div class="mt-5 card p-4 z-depth-3">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <div class="view overlay">
-                <img class="card-img-left"
-                    src="https://www.hachette-vins.com/uploads/media/cache/thumb_medium/uploads/media/recettes/0001/05/719a78f2443f2372cfe04fbf50d4f45acdb2a3b2.jpeg"
-                    alt="Card image cap">
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            </div>
-            <div class="col-lg-6 col-md-12 mb-0 mb-md-0">
-            <div class="card-body">
-    
-                <!--Title-->
-                <h3 class="card-title text-center">Tajine d'agneau aux raisins et aux amandes</h3>
-                <!--Text-->
-                <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
-                <p class="card-text">Le gingembre, les raisins et les amandes favorisent une sauce un peu plus amère et appellent de préférence
-                     vin blanc (voire un rosé). Celui-ci doit être du Sud, d'une acidité basse, d'un caractère sec et gras (un vin de pays des 
-                     Côtes catalanes cépage muscat ou un vin de pays d'Ardèche cépage viognier, un tavel ou un lirac rosé). Sa richesse aromatique
-                      est nécessaire pour faire face au gingembre. Un vin rouge devra être dans le même esprit mais avec des tanins ronds 
-                      (beaumes-de-venise ou languedoc Montpeyroux). L'appellation costières-de-nîmes conviendra dans les trois couleurs.
-                </p>
-                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                <h6 class="card-title">Temps de préparation : </h6>
-                <h6 class="card-title">Temps de cuisson : </h6>
-                <h6 class="card-title">Difficulté : </h6>
-            </div>
-            </div>
-        </div>
-    </div>
-    <div class="mt-5 card p-4 z-depth-3">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <div class="view overlay">
-                <img class="card-img-left"
-                    src="https://www.hachette-vins.com/uploads/media/cache/thumb_medium/uploads/media/recettes/0001/05/719a78f2443f2372cfe04fbf50d4f45acdb2a3b2.jpeg"
-                    alt="Card image cap">
-                <a>
-                    <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
-            </div>
-            <div class="col-lg-6 col-md-12 mb-0 mb-md-0">
-            <div class="card-body">
-    
-                <!--Title-->
-                <h3 class="card-title text-center">Tajine d'agneau aux raisins et aux amandes</h3>
-                <!--Text-->
-                <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
-                <p class="card-text">Le gingembre, les raisins et les amandes favorisent une sauce un peu plus amère et appellent de préférence
-                     vin blanc (voire un rosé). Celui-ci doit être du Sud, d'une acidité basse, d'un caractère sec et gras (un vin de pays des 
-                     Côtes catalanes cépage muscat ou un vin de pays d'Ardèche cépage viognier, un tavel ou un lirac rosé). Sa richesse aromatique
-                      est nécessaire pour faire face au gingembre. Un vin rouge devra être dans le même esprit mais avec des tanins ronds 
-                      (beaumes-de-venise ou languedoc Montpeyroux). L'appellation costières-de-nîmes conviendra dans les trois couleurs.
-                </p>
-                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                <h6 class="card-title">Temps de préparation : </h6>
-                <h6 class="card-title">Temps de cuisson : </h6>
-                <h6 class="card-title">Difficulté : </h6>
-            </div>
-            </div>
-        </div>
-    </div>
+     </div>
 </div>
+
+
+                
+
+               
+                
+
+         
