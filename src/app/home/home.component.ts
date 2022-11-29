@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth/auth.service';
+import { RecetteService } from '../services/recette.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent {
   title = 'Deguste_moi';
   
 
-  constructor(public authService: AuthService, private route: Router, private http: HttpClient){}
+  constructor(public authService: AuthService, private route: Router, private recetteService: RecetteService, private http: HttpClient){}
 
   isHome= true;
   recette: any;
@@ -78,7 +79,11 @@ export class HomeComponent {
     })
   }
 
-  
+  goToRecette(val: any) {
+    this.recetteService.saveRecetteActu(val);
+    this.route.navigateByUrl('ficheRecette');
+
+  }
   
 
 }
