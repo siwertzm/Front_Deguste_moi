@@ -44,9 +44,9 @@
           <!--Card image-->
           <div class="view overlay">
             <img class="card-img-top"
-              src="https://www.hachette-vins.com/uploads/media/tourisme/0001/06/d707a6dbae1a3391b1af81dc91cbf10532a6c077.jpeg"
+              src="{{vin?.source_image}}"
               alt="Card image cap">
-            <a href="#!">
+            <a>
               <div class="mask rgba-white-slight"></div>
             </a>
           </div>
@@ -55,18 +55,11 @@
           <div class="card-body">
   
             <!--Title-->
-            <h3 class="card-title text-center">AOC Volnay</h3>
-            <!--Text-->
-            <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
-            <p class="card-text">Entre Pommard au nord et Meursault au sud, Volnay est situé à 275 m d'altitude : ce village étroit et pentu occupe une position assez élevée dans la Côte. Adossé à la petite montagne du Chaignot, le vignoble est implanté sur des sols calcaires exposés au sud-est. Le volnay passe pour un vin féminin, suave et subtil : le vin rouge le plus fin de la Côte de Beaune. Il est assez précoce.</p>
+            <h3 class="card-title text-center">{{vin?.titre}}</h3>
             <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-            <h6 class="card-title">Couleur : </h6>
-            <h6 class="card-title">Potentiel de garde : </h6>
-            <h6 class="card-title">Principaux cépages : </h6>
-            <div class="text-center">
-              <button type="button" class="btn btn-light-blue btn-md">VOIR LA FICHE</button>
-            </div>
-  
+            <h6 class="card-title">Description : {{vinDetail?.description}}</h6>
+            <h6 class="card-title">Region : {{vinDetail?.region}}</h6>
+            <h6 class="card-title">Type : {{vin?.type}}</h6>
           </div>
         </div>
         <!-- Card vin du jour -->
