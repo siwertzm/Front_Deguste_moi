@@ -15,13 +15,17 @@ export class MesInvitationsComponent {
   }
 
   ngOnInit(){
+    console.log(this.authService.getUserConnected().id)
+    this.recupeInvite(this.authService.getUserConnected().id);
 
   }
 
   recupeInvite(val: any){
     this.http.get('http://localhost:8289/participation/user/' + val).subscribe({
+      next: (data)=> { this.invitation = data, console.log(this.invitation)},
+      error: (err)=> { console.log(err)}
 
-    })
+    });
   }
 
 }
