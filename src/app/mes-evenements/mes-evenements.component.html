@@ -12,7 +12,7 @@
 
             <div class="view overlay">
 
-                <div class="card w-100">
+                <div class="card w-100" *ngFor="let e of evenements">
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="https://zupimages.net/up/22/47/pd6v.jpg"
@@ -20,10 +20,11 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h3 class="card-title"><strong>Expéditeur :</strong></h3>
-                                <h3 class="card-title"><strong>Date :</strong></h3>
-                                <h3 class="card-title"><strong>Lieu :</strong></h3>
-                                <h3 class="card-title"><strong>Thème :</strong></h3>
+                                <h3 class="card-title"><strong>Evènement à venir</strong></h3>
+                                <h3 class="card-title"><strong>Expéditeur : {{e.repas.hote.nom}}  {{e.repas.hote.prenom}}</strong></h3>
+                                <h3 class="card-title"><strong>Date : {{e.repas.date}}</strong></h3>
+                                <h3 class="card-title"><strong>Lieu : {{e.repas.lieu}}</strong></h3>
+                                <h3 class="card-title"><strong>Thème : {{e.repas.theme}}</strong></h3>
 
 
 
