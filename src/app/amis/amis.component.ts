@@ -22,6 +22,7 @@ export class AmisComponent implements OnInit{
   user: any;
   userConnected: any;
   demandeactu: any;
+  status: any;
 
   constructor(private http: HttpClient, private service: AuthService, private route : Router){
 
@@ -73,12 +74,21 @@ export class AmisComponent implements OnInit{
     });
   }
 
-  accepterDemande(val1:any,val2: any){
-    
-    /*this.http.patch('http://localhost:8289/demande/accept/'+val1+'/'+val2).subscribe({
+  /*accepterDemande(val :any){
+    let val1=this.service.getUserConnected()
+    console.log(val);
+    console.log(val1);
+    this.http.patch('http://localhost:8289/demande/accept/'+val1+'/'+val,{"valide": "true"}).subscribe({
       next: (data)=> {console.log(data)},
       error: (err)=> {console.log(err);}
-    });*/
+    });
+  }
+*/
+  refusDemande(val: any){
+    
+    this.http.delete('http://localhost:8289/demande/reject/'+ val).subscribe(()=> this.status = 'delete success');
+    window.location.reload();
+    
   }
   
 }
