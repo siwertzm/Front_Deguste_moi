@@ -1,9 +1,8 @@
-import { registerLocaleData } from '@angular/common';
+
 import { HttpClient } from '@angular/common/http';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth/auth.service';
-import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
@@ -76,5 +75,4 @@ export class ProfileComponent {
   });;
   }
 
- 
 }
