@@ -3,74 +3,43 @@
         <h1 class="mt-5 text-center underline">Invitez des amis à un repas</h1>
         <br>
 
-        <form>
+        <form #register="ngForm" (ngSubmit)="createRepas(register.value)">
             <div class="titre">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Adresse du repas</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" ngModel="" name = "adresse" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Thème</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" ngModel="" name = "theme" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Date</label>
-                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="date" class="form-control" ngModel="" name = "date" aria-describedby="emailHelp">
                 </div>
             </div>
+            <button type="submit" class="envoyer btn">Créer le repas</button>
+
+            </form>
             <div class=recherche>
 
                 <form class="d-flex" role="search">
                     <input class="form-control" type="search" placeholder="Rechercher une personne" aria-label="Search">
                     <button type="submit">Search</button>
-
                 </form>
             </div>
             <br>
             <ul>
                 <div class="form-check">
-                    <li> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">Ami 1</label>
+                    <li *ngFor="let r of amis">
+                    <form #register="ngForm" (ngSubmit)="envoieParticipations(register.value, r)">
+                    <label class="form-check-label">{{r.nom}} {{r.prenom}}</label>
+                    <button type ="submit" mat-raised-button color="primary">Inviter</button>
+                    <p></p>
+                    </form>
                     </li>
-                    <li> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">Ami 2</label>
-                    </li>
-                    <li> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">Ami 3</label>
-                    </li>
-                    <li> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">Ami 4</label>
-                    </li>
-                    <li> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">Ami 5</label>
-                    </li>
-                    <li> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">Ami 6</label>
-                    </li>
-                    <li> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">Ami 7</label>
-                    </li>
-                    <li> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">Ami 8</label>
-                    </li>
-                    <li> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">Ami 9</label>
-                    </li>
-                    <li> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">Ami 10</label>
-                    </li>
-                    <li> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">Ami 11</label>
-                    </li>
-                    <li> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">Ami 12</label>
-                    </li>
-
-                   
                 </div>
             </ul>
-            <button type="submit" class="envoyer btn">Envoyer l'invitation</button>
-
-        </form>
+            
     </div>
 </div>
