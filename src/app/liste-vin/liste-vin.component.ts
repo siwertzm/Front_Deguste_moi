@@ -22,10 +22,40 @@ export class ListeVinComponent {
 
   recupeVin() {
     this.http.get('http://localhost:8289/vin').subscribe({
+      next: (data) => { this.vin = data;},
+      error: (err) => { console.log(err); }
+
+    });
+  }
+
+  go(val: any) {
+    this.http.get('http://localhost:8289/vin/region/' + val).subscribe({
       next: (data) => { this.vin = data; },
       error: (err) => { console.log(err); }
 
     });
+  }
+
+  rechercheVin(val: string) {
+    if(val != ''){
+      this.http.get('http://localhost:8289/vin/' + val).subscribe({
+        next: (data)=> { this.vin = data; console.log(val)},
+        error: (err) => { console.log(err);}
+      });
+    }else {
+      this.http.get('http://localhost:8289/vin').subscribe({
+      next: (data) => { this.vin = data;},
+      error: (err) => { console.log(err); }
+
+    });
+    }
+
+  }
+
+  goToVin(val: any) {
+    this.recetteService.saveRecetteActu(val);
+    this.route.navigateByUrl('ficheRecette');
+
   }
 
 }
