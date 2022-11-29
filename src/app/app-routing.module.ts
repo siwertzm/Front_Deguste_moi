@@ -19,6 +19,7 @@ import { MesEvenementsComponent } from './mes-evenements/mes-evenements.componen
 import { VinsFavsComponent } from './vins-favs/vins-favs.component';
 import { RecettesFavsComponent } from './recettes-favs/recettes-favs.component';
 import { HomeComponent } from './home/home.component';
+import { VinRegionComponent } from './vin-region/vin-region.component';
 
 
 const routes: Routes = [
@@ -41,7 +42,8 @@ const routes: Routes = [
   {component : RecettesFavsComponent, path:"recettesFavs"},
   {component : ListeCoursesComponent, path :"listeCourses"},
   {component: HomeComponent, path: 'home'},
-  {path: '', redirectTo: 'home', pathMatch:'full'}
+  {path: '', redirectTo: 'home', pathMatch:'full'},
+  {component: VinRegionComponent, path:'listeVinRegion'}
 
 ];
 

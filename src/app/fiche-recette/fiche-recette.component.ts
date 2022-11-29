@@ -47,7 +47,7 @@ export class FicheRecetteComponent {
 
   goToVins(val: any){
     this.AppelService.saveAppelation(val);
-    this.route.navigateByUrl('listeVin');
+    this.route.navigateByUrl('listeVinRegion');
   }
   
 
