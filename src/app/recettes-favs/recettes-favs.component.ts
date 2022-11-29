@@ -55,8 +55,10 @@ export class RecettesFavsComponent {
   }
 
   supFavoris(val: any){
-    this.http.delete('http://localhost:8289/favori/'+ val)
-    .subscribe(()=> this.status = 'delete success');
+
+    this.http.delete('http://localhost:8289/favori/'+ val).subscribe(()=> this.status = 'delete success');
+    window.location.reload();
+    
   }
 
 }
