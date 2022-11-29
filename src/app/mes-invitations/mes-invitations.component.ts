@@ -10,6 +10,7 @@ import { AuthService } from '../services/auth/auth.service';
 export class MesInvitationsComponent {
 
   invitation: any;
+  status: any;
   constructor(private http: HttpClient, private authService: AuthService){
 
   }
@@ -26,6 +27,13 @@ export class MesInvitationsComponent {
       error: (err)=> { console.log(err)}
 
     });
+  }
+
+  supInvite(val: any){
+
+    this.http.delete('participation/reject/'+ val).subscribe(()=> this.status = 'delete success');
+    window.location.reload();
+    
   }
 
 }
