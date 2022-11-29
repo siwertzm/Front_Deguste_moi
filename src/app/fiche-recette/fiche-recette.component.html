@@ -101,7 +101,7 @@
                    
                         <tr *ngFor="let a of gestionPrep(recetteDetail?.appellations_recommandees)">
                             <td> {{a}} </td>
-                            <div class="text-center"><button type="button" onclick="location.href='index'"
+                            <div class="text-center"><button type="button" (click)="goToVins(a)"
                                 class="btn btn-unique btn-sm">Voir la
                                 liste des vins</button>
                         </div>

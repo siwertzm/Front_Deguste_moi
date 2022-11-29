@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { RecetteService } from '../services/recette.service';
 
 @Component({
-  selector: 'app-liste-vin',
-  templateUrl: './liste-vin.component.html',
-  styleUrls: ['./liste-vin.component.css']
+  selector: 'app-vin-region',
+  templateUrl: './vin-region.component.html',
+  styleUrls: ['./vin-region.component.css']
 })
-export class ListeVinComponent {
+export class VinRegionComponent {
 
   vin: any;
   constructor(private http: HttpClient, private recetteService: RecetteService, private route: Router) {
@@ -16,7 +16,8 @@ export class ListeVinComponent {
   }
 
   ngOnInit(): void {
-    this.recupeVin();
+    let region: any = localStorage.getItem('appelation');
+    this.go(JSON.parse(region));
 
   }
 

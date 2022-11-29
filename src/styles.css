@@ -1,3 +1,14 @@
 body {
-    background: rgba(211, 153, 144, 0.3) /* Green background with 30% opacity */
-  }
+  background: rgba(211, 153, 144, 0.3)
+    /* Green background with 30% opacity */
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
