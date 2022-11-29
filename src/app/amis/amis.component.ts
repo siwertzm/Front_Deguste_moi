@@ -58,22 +58,27 @@ export class AmisComponent implements OnInit{
 
   demande(){
    let demande = {envoyeur: this.userConnected, receveur: this.user, valide: false};
-  console.log(demande);
+   console.log(demande);
     this.http.post('http://localhost:8289/demande', demande).subscribe({
       next: (data)=> {console.log(data)},
-      error: (err)=> {console.log(err);}
+      error: (err)=> {console.log(err)}
       
   })}
 
   gestionDemande(){
     this.http.get('http://localhost:8289/demande').subscribe({
-    next: (data)=> {this.demandeactu = data; console.log(this.demandeactu)},
+      
+    next: (data)=> {this.demandeactu = data;},
     error: (err)=> {console.log(err)}
     });
   }
 
-  accepterDemande(){
+  accepterDemande(val1:any,val2: any){
     
+    /*this.http.patch('http://localhost:8289/demande/accept/'+val1+'/'+val2).subscribe({
+      next: (data)=> {console.log(data)},
+      error: (err)=> {console.log(err);}
+    });*/
   }
   
 }
