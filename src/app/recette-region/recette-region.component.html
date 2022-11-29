@@ -1,0 +1,43 @@
+<div style="margin: auto; width: 60%">
+    <div>
+        <h1 class="mt-5 text-center"><u>Liste des Vins</u></h1>
+    </div>
+    <form class="form-inline mt-4">
+        <input class="form-control w-75" type="search" #data placeholder="Recherche">
+        <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-5" type="submit"
+            (click)="rechercheRecette(data.value)">Rechercher</button>
+    </form>
+    
+    <div class="block" *ngFor="let r of recette">
+        <div class="mt-5 card p-4 z-depth-3">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="view overlay">
+                        <img class="card-img-left"
+                            src="{{r.lien_image}}"
+                            alt="Card image cap">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card-body">
+
+                        <!--Title-->
+                        <h3 class="card-title text-center">{{r.titre}}</h3>
+                        <!--Title-->
+                        <h4 class="card-title text-center">{{r.sous_titre}}</h4>
+                        <!--Text-->
+                        <h6 class="card-title"><strong>Description</strong></h6>
+                        <p class="card-text">{{r.description}}
+                        </p>
+                        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                        <h5 class="card-title">Couleur : {{r.type}}</h5>
+                        <h5 class="card-title"><a (click)="go(r.region)">Appelation : {{r.region}}</a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -58,8 +58,11 @@
             <h3 class="card-title text-center">{{vin?.titre}}</h3>
             <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
             <h6 class="card-title">Description : {{vinDetail?.description}}</h6>
-            <h6 class="card-title">Region : {{vinDetail?.region}}</h6>
+            <h6 class="card-title">Appelation : {{vinDetail?.region}}</h6>
             <h6 class="card-title">Type : {{vin?.type}}</h6>
+            <div class="text-center">
+              <button type="button" (click)="goToVin(vin)" class="btn btn-unique">Voir la fiche du vin</button>
+            </div>
           </div>
         </div>
         <!-- Card vin du jour -->
