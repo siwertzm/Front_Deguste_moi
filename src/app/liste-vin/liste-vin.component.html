@@ -35,7 +35,9 @@
                         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
                         <h5 class="card-title">Couleur : {{v.type}}</h5>
                         <h5 class="card-title"><a (click)="go(v.region)">Appelation: {{v.region}}</a></h5>
+                        <button type="button" (click)="goToVin(v)" class="btn btn-unique">Présentation</button>
                     </div>
+
                 </div>
             </div>
         </div>
