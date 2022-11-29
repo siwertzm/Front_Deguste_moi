@@ -20,6 +20,8 @@ import { VinsFavsComponent } from './vins-favs/vins-favs.component';
 import { RecettesFavsComponent } from './recettes-favs/recettes-favs.component';
 import { HomeComponent } from './home/home.component';
 import { VinRegionComponent } from './vin-region/vin-region.component';
+import { RecetteRegionComponent } from './recette-region/recette-region.component';
+
 
 
 const routes: Routes = [
@@ -43,7 +45,8 @@ const routes: Routes = [
   {component : ListeCoursesComponent, path :"listeCourses"},
   {component: HomeComponent, path: 'home'},
   {path: '', redirectTo: 'home', pathMatch:'full'},
-  {component: VinRegionComponent, path:'listeVinRegion'}
+  {component: VinRegionComponent, path:'listeVinRegion'},
+  {component: RecetteRegionComponent, path:'listeRecetteRegion'}
 
 ];
 

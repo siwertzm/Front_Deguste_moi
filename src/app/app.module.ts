@@ -31,6 +31,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
 import { HomeComponent } from './home/home.component';
 import { VinRegionComponent } from './vin-region/vin-region.component';
+import { RecetteRegionComponent } from './recette-region/recette-region.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { VinRegionComponent } from './vin-region/vin-region.component';
     ListeCoursesComponent,
     HomeComponent,
     VinRegionComponent,
+    RecetteRegionComponent,
   ],
   imports: [
     BrowserModule,

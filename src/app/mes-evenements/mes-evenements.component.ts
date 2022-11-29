@@ -8,6 +8,7 @@ import { AuthService } from '../services/auth/auth.service';
   styleUrls: ['./mes-evenements.component.css']
 })
 export class MesEvenementsComponent {
+  evenements: any;
 
   invitation: any;
   status: any;

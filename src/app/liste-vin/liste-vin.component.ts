@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { RecetteService } from '../services/recette.service';
+
+import { VinService } from '../vin.service';
 
 @Component({
   selector: 'app-liste-vin',
@@ -11,7 +12,7 @@ import { RecetteService } from '../services/recette.service';
 export class ListeVinComponent {
 
   vin: any;
-  constructor(private http: HttpClient, private recetteService: RecetteService, private route: Router) {
+  constructor(private http: HttpClient, private vinService: VinService, private route: Router) {
 
   }
 
@@ -53,8 +54,8 @@ export class ListeVinComponent {
   }
 
   goToVin(val: any) {
-    this.recetteService.saveRecetteActu(val);
-    this.route.navigateByUrl('ficheRecette');
+    this.vinService.saveVinActu(val);
+    this.route.navigateByUrl('vin');
 
   }
 
