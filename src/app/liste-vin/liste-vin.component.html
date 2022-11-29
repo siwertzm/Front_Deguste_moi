@@ -1,162 +1,39 @@
-<div style="margin: auto; width: 80%">
+<div style="margin: auto; width: 60%">
     <div>
         <h1 class="mt-5 text-center"><u>Liste des Vins</u></h1>
     </div>
-    <div class="block">
+    <form class="form-inline mt-4">
+        <input class="form-control w-75" type="search" #data placeholder="Recherche">
+        <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-5" type="submit"
+            (click)="rechercheVin(data.value)">Rechercher</button>
+    </form>
+    <div class="block" *ngFor="let v of vin">
         <div class="mt-5 card p-4 z-depth-3">
             <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <div class="col-sm-4">
                     <div class="view overlay">
                         <img class="card-img-left"
-                            src="https://www.hachette-vins.com/uploads/media/tourisme/0001/06/d707a6dbae1a3391b1af81dc91cbf10532a6c077.jpeg"
+                            src="{{v.lien_image}}"
                             alt="Card image cap">
                         <a>
                             <div class="mask rgba-white-slight"></div>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 mb-0 mb-md-0">
+                <div class="col-sm-4">
                     <div class="card-body">
 
                         <!--Title-->
-                        <h3 class="card-title text-center">AOC Volnay</h3>
-                        <!--Text-->
-                        <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
-                        <p class="card-text">Entre Pommard au nord et Meursault au sud, Volnay est situé à 275 m
-                            d'altitude : ce
-                            village étroit et pentu occupe une position assez élevée dans la Côte. Adossé à la petite
-                            montagne
-                            du
-                            Chaignot, le vignoble est implanté sur des sols calcaires exposés au sud-est. Le volnay
-                            passe pour
-                            un
-                            vin féminin, suave et subtil : le vin rouge le plus fin de la Côte de Beaune. Il est assez
-                            précoce.
-                        </p>
-                        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                        <h6 class="card-title">Couleur : </h6>
-                        <h6 class="card-title">Potentiel de garde : </h6>
-                        <h6 class="card-title">Principaux cépages : </h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="block">
-        <div class="mt-5 card p-4 z-depth-3">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <div class="view overlay">
-                        <img class="card-img-left"
-                            src="https://www.hachette-vins.com/uploads/media/tourisme/0001/06/d707a6dbae1a3391b1af81dc91cbf10532a6c077.jpeg"
-                            alt="Card image cap">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 mb-0 mb-md-0">
-                    <div class="card-body">
-
+                        <h3 class="card-title text-center">{{v.titre}}</h3>
                         <!--Title-->
-                        <h3 class="card-title text-center">AOC Volnay</h3>
+                        <h4 class="card-title text-center">{{v.sous_titre}}</h4>
                         <!--Text-->
                         <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
-                        <p class="card-text">Entre Pommard au nord et Meursault au sud, Volnay est situé à 275 m
-                            d'altitude : ce
-                            village étroit et pentu occupe une position assez élevée dans la Côte. Adossé à la petite
-                            montagne
-                            du
-                            Chaignot, le vignoble est implanté sur des sols calcaires exposés au sud-est. Le volnay
-                            passe pour
-                            un
-                            vin féminin, suave et subtil : le vin rouge le plus fin de la Côte de Beaune. Il est assez
-                            précoce.
+                        <p class="card-text">{{v.description}}
                         </p>
                         <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                        <h6 class="card-title">Couleur : </h6>
-                        <h6 class="card-title">Potentiel de garde : </h6>
-                        <h6 class="card-title">Principaux cépages : </h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="block">
-        <div class="mt-5 card p-4 z-depth-3">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <div class="view overlay">
-                        <img class="card-img-left"
-                            src="https://www.hachette-vins.com/uploads/media/tourisme/0001/06/d707a6dbae1a3391b1af81dc91cbf10532a6c077.jpeg"
-                            alt="Card image cap">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 mb-0 mb-md-0">
-                    <div class="card-body">
-
-                        <!--Title-->
-                        <h3 class="card-title text-center">AOC Volnay</h3>
-                        <!--Text-->
-                        <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
-                        <p class="card-text">Entre Pommard au nord et Meursault au sud, Volnay est situé à 275 m
-                            d'altitude : ce
-                            village étroit et pentu occupe une position assez élevée dans la Côte. Adossé à la petite
-                            montagne
-                            du
-                            Chaignot, le vignoble est implanté sur des sols calcaires exposés au sud-est. Le volnay
-                            passe pour
-                            un
-                            vin féminin, suave et subtil : le vin rouge le plus fin de la Côte de Beaune. Il est assez
-                            précoce.
-                        </p>
-                        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                        <h6 class="card-title">Couleur : </h6>
-                        <h6 class="card-title">Potentiel de garde : </h6>
-                        <h6 class="card-title">Principaux cépages : </h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="block">
-        <div class="mt-5 card p-4 z-depth-3">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <div class="view overlay">
-                        <img class="card-img-left"
-                            src="https://www.hachette-vins.com/uploads/media/tourisme/0001/06/d707a6dbae1a3391b1af81dc91cbf10532a6c077.jpeg"
-                            alt="Card image cap">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 mb-0 mb-md-0">
-                    <div class="card-body">
-
-                        <!--Title-->
-                        <h3 class="card-title text-center">AOC Volnay</h3>
-                        <!--Text-->
-                        <h6 class="card-title"><strong>CONSEIL</strong> DU SOMMELIER </h6>
-                        <p class="card-text">Entre Pommard au nord et Meursault au sud, Volnay est situé à 275 m
-                            d'altitude : ce
-                            village étroit et pentu occupe une position assez élevée dans la Côte. Adossé à la petite
-                            montagne
-                            du
-                            Chaignot, le vignoble est implanté sur des sols calcaires exposés au sud-est. Le volnay
-                            passe pour
-                            un
-                            vin féminin, suave et subtil : le vin rouge le plus fin de la Côte de Beaune. Il est assez
-                            précoce.
-                        </p>
-                        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-                        <h6 class="card-title">Couleur : </h6>
-                        <h6 class="card-title">Potentiel de garde : </h6>
-                        <h6 class="card-title">Principaux cépages : </h6>
+                        <h5 class="card-title">Couleur : {{v.type}}</h5>
+                        <h5 class="card-title"><a (click)="go(v.region)">Region : {{v.region}}</a></h5>
                     </div>
                 </div>
             </div>
